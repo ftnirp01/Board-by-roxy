@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>F.com</title>
 </head>
 <body>
 	
@@ -15,27 +15,26 @@
 	
 	<hr>
 	
-	<div class = "row text-center mt-4">
+	<div class = "row text-center">
 		<div class = "col-md-3">
-			<p>번호</p>
+			<strong>번호</strong>
 		</div>
 		<div class = "col-md-3">
-			<p>제목</p>
+			<strong>제목</strong>
 		</div>
 		<div class = "col-md-3">
-			<p>등록일</p>
+			<strong>글쓴이</strong>
 		</div>
 		<div class = "col-md-3">
-			<p>글쓴이</p>
+			<strong>등록일</strong>
 		</div>
 	</div>
 	
-	<hr>
+	<hr>	
 	
 	<c:forEach items="${list }" var="board">
 	
 	
-	<hr>
 	
 	<div class = "row text-center mt-4">
 		<div class = "col-md-3">
@@ -45,24 +44,40 @@
 			<p>${board.b_title }</p>
 		</div>
 		<div class = "col-md-3">
-			<p>${board.regDate }</p>
+			<p>${board.userName}</p>
 		</div>
 		<div class = "col-md-3">
-			<p>${board.userName}</p>
+			<p>${board.regDate }</p>
 		</div>
 	</div>
 	
 	<hr>
 	
 	</c:forEach>
-		
+	
+	
+	<!-- 페이징 -->
+	<div  style="text-align: center;">
+		<a class = "btn">1</a>
+	</div>
+	
+	<!-- 글 작성 버튼 -->
+	
+	<div>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a class="btn btn-outline-primary btn-lg">새 글</a>
+		<a class="btn btn-outline-primary btn-lg">익명 글</a>
+	</div>
+
 	
 	
 	
 	
+			
 	
 	
-	<br><br><br><br>
+	
+	<hr>
 	<%@ include file = "footer.jsp" %>
 
 
