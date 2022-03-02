@@ -1,6 +1,6 @@
-<%@page import="java.*"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@page import="java.*"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -63,10 +63,9 @@
 	
 	<!-- 글 작성 버튼 -->
 	
-	<div>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a class="btn btn-outline-primary btn-lg">새 글</a>
-		<a class="btn btn-outline-primary btn-lg">익명 글</a>
+	<div style="position: absolute; left: 160px;">
+		<a class="btn btn-outline-primary btn-lg" >새 글</a>
+		<a class="btn btn-outline-primary btn-lg" href = "write">익명 글</a>
 	</div>
 
 	
@@ -76,7 +75,7 @@
 			
 	
 	
-	
+	<br><br>
 	<hr>
 	<%@ include file = "footer.jsp" %>
 

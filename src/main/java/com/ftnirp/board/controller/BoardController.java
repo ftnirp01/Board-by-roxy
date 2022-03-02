@@ -25,4 +25,10 @@ public class BoardController {
 		return "list";
 	}
 
+	
+	@RequestMapping("/write")
+	public String showWrite() {
+		return "write";
+	}
+	
 }
