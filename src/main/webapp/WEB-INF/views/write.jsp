@@ -16,14 +16,14 @@
 	<br>
 	<hr>
 	
-	<form action="#">
+	<form action="insert" method="post" accept-charset="utf-8">
 	
 	<strong style="position: absolute; left: 225px;">Á¦¸ñ</strong>
 	
 	<br>
 	
 	<div style="text-align: center;">
-		<input type="text" style="width: 1070px;">
+		<input type="text" name = "b_title" id = "b_title" style="width: 1070px;">
 	</div>
 	
 	<br>
@@ -34,7 +34,7 @@
 	<br>
 
 	<div style="text-align: center;">
-		<textarea rows="20" cols="130"></textarea>
+		<textarea name = "b_body" id = "b_body" rows="20" cols="130" ></textarea>
 	</div>
 
 	<div style="position: absolute; left: 1155px;">

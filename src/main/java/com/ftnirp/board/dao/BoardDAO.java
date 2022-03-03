@@ -14,4 +14,6 @@ public interface BoardDAO {
 	
 	BoardVO listOne(Long userId);
 	
+	int insertBoard(BoardVO params);
+	
 }

@@ -177,11 +177,11 @@ section {
   display: inline-block;
   background-color: #ff00cc;
   border-color: #ff00cc;
-  color: #fff; }
+  color: black; }
   .btn-primary:hover {
     background-color: #333399;
     border-color: #333399;
-    color: #fff; }
+    color: black; }
 
 .btn-outline-primary {
   color: black;
@@ -191,7 +191,7 @@ section {
   .btn-outline-primary:hover {
     background-color: #fcf3d8;
     border-color: #333399;
-    color: #fff; }
+    color: black; }
 
 .btn-shadow {
   box-shadow: -5px 8px 20px 0px rgba(229, 16, 2, 0.15); }

@@ -2,9 +2,12 @@ package com.ftnirp.board.controller;
 
 import java.util.List;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -46,5 +49,21 @@ public class BoardController {
 		}
 		return "b_body";
 	}
+	
+	@PostMapping("/insert")
+	public String insert(BoardVO params) {
+		
+		System.out.println("insert 완료");
+		
+		int isInsert = boardService.insertBoard(params);
+		
+		if (isInsert == 0) {
+			System.out.println("게시물 등록 실패");
+		}
+		
+		return "redirect:/list";
+	}
+	
+	
 	
 }

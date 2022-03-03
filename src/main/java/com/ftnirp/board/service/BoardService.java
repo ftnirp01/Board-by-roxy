@@ -23,5 +23,11 @@ public class BoardService {
 		return mapper.listOne(userId);
 	}
 	
+	public int insertBoard(BoardVO params) {
+		return mapper.insertBoard(params);
+	}
+	
+	
+	
 	
 }

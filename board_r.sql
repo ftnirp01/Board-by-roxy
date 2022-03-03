@@ -1,18 +1,28 @@
 Create table board_r (
     userId NUMBER(10) not null,
-    userName VARCHAR2(20) DEFAULT 'ÀÍ¸í',
+    userName VARCHAR2(20) DEFAULT 'ï¿½Í¸ï¿½',
     b_title VARCHAR2(100) ,
     b_body VARCHAR2(1000) ,
     regDate date
 
 );
 
-insert into board_r VALUES (1, 'È«±æµ¿','Á¦¸ñ1','³»¿ë1',sysdate);
-insert into board_r VALUES (2, '±è³ª·¡','Á¦¸ñ1','³»¿ë1',sysdate);
-insert into board_r VALUES (3, 'ÃÖ¿õ','Á¦¸ñ1','³»¿ë1',sysdate);
-insert into board_r VALUES (4, '±¹¿¬¼ö','Á¦¸ñ1','³»¿ë1',sysdate);
-insert into board_r VALUES (5,DEFAULT,'Á¦¸ñ1','³»¿ë1',sysdate);
+insert into board_r VALUES (1, 'È«ï¿½æµ¿','ï¿½ï¿½ï¿½ï¿½1','ï¿½ï¿½ï¿½ï¿½1',sysdate);
+insert into board_r VALUES (2, 'ï¿½è³ªï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½1','ï¿½ï¿½ï¿½ï¿½1',sysdate);
+insert into board_r VALUES (3, 'ï¿½Ö¿ï¿½','ï¿½ï¿½ï¿½ï¿½1','ï¿½ï¿½ï¿½ï¿½1',sysdate);
+insert into board_r VALUES (4, 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½1','ï¿½ï¿½ï¿½ï¿½1',sysdate);
+insert into board_r VALUES (5,DEFAULT,'ï¿½ï¿½ï¿½ï¿½1','ï¿½ï¿½ï¿½ï¿½1',sysdate);
 
 select * from board_r;
+
+--ì‹œí€€ìŠ¤ ë“±ë¡
+create sequence BOARD_SEQ
+increment by 1
+start with 1
+minvalue 1
+maxvalue 9999
+nocycle
+nocache
+noorder;
 
 commit;
