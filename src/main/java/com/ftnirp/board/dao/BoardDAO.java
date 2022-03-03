@@ -9,6 +9,9 @@ import com.ftnirp.board.dto.BoardVO;
 @Mapper
 public interface BoardDAO {
 
+	
 	List<BoardVO> getList();
+	
+	BoardVO listOne(Long userId);
 	
 }

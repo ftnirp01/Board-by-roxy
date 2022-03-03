@@ -19,5 +19,9 @@ public class BoardService {
 		return mapper.getList();
 	}
 	
+	public BoardVO listOne(Long userId) {
+		return mapper.listOne(userId);
+	}
+	
 	
 }

@@ -38,10 +38,10 @@
 	
 	<div class = "row text-center mt-4">
 		<div class = "col-md-3">
-			<p>${board.userId }</p>
+			<p>${board.userId}</p>
 		</div>
 		<div class = "col-md-3">
-			<p>${board.b_title }</p>
+			<a href = "body?userId=${board.userId }">${board.b_title }</a>
 		</div>
 		<div class = "col-md-3">
 			<p>${board.userName}</p>

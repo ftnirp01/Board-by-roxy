@@ -3,7 +3,11 @@
 <mapper namespace="com.ftnirp.board.dao.BoardDAO">
 	
 	<select id="getList" resultType="com.ftnirp.board.dto.BoardVO">
-		select * from board_r
+		select * from board_r order by userId asc
+	</select>
+	
+	<select id="listOne" parameterType="Long" resultType="com.ftnirp.board.dto.BoardVO">
+		select * from board_r where userId = #{userId}
 	</select>
 
 
