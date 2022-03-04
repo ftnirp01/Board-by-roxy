@@ -18,4 +18,6 @@ public interface BoardDAO {
 	
 	void updateBoard(BoardVO params); //글 수정
 	
+	void deleteBoard(int userId);
+	
 }

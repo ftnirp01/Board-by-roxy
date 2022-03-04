@@ -2,7 +2,6 @@ package com.ftnirp.board.controller;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -82,8 +81,14 @@ public class BoardController {
 	
 	@PostMapping("/modify")
 	public String updateBoard(BoardVO params) {
-		
 		boardService.updateBoard(params);
+		return "redirect:/list";
+	}
+	
+	@PostMapping("/delete")
+	public String deleteBoard (int userId) {
+		System.out.println("userId(삭제) = " + userId);
+		boardService.deleteBoard(userId);
 		return "redirect:/list";
 	}
 	

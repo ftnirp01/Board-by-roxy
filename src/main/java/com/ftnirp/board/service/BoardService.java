@@ -31,6 +31,10 @@ public class BoardService {
 		mapper.updateBoard(params);
 	}
 	
+	public void deleteBoard(int userId) {
+		mapper.deleteBoard(userId);
+	}
+	
 	
 	
 }

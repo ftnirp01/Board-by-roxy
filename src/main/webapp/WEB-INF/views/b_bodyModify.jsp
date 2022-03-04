@@ -44,7 +44,7 @@
 	
 	<div style="position: absolute; left: 220px;">
 	
-		<input class="btn btn-outline-primary btn-lg" type="submit" value="수정하기"/>
+		<input class="btn btn-outline-primary btn-lg" onclick="alert('수정이 정상적으로 되었습니다.')" type="submit" value="수정하기"/>
 		
 		<input class="btn btn-outline-primary btn-lg" type="reset" value = "취소하기"/>
 		

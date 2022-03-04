@@ -17,7 +17,7 @@
 	<br>
 	<hr>
 	
-	<form method="post">
+	<form action="delete?userId=${board.userId}" method="post" >
 	
 	<strong style="position: absolute; left: 225px;">제목</strong>
 	
@@ -41,11 +41,11 @@
 	
 	<div style="position: absolute; left: 220px;">
 		<a class="btn btn-outline-primary btn-lg" href = "modify?userId=${board.userId }">수정하기</a>
-		<a class="btn btn-outline-primary btn-lg" href = "#">삭제하기</a>
+		<button class="btn btn-outline-primary btn-lg" onclick="return confirm('정말로 삭제하시겠습니까?')" type="submit">삭제하기</button>
 	</div>
 	
 	</form>
-	
+
 	
 	<br>
 	<br>

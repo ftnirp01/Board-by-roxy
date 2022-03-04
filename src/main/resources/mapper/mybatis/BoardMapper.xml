@@ -27,6 +27,12 @@
 		b_body = #{b_body}
 		where userId = #{userId}
 	</update>
+	
+	
+	<delete id="deleteBoard" parameterType="com.ftnirp.board.dto.BoardVO">
+		DELETE board_r
+		WHERE userId = #{userId}
+	</delete>
 
 
 
