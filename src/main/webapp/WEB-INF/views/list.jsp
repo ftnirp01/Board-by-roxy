@@ -32,7 +32,7 @@
 	
 	<hr>	
 	
-	<c:forEach items="${list }" var="board">
+	<c:forEach items="${list}" var="board">
 	
 	
 	

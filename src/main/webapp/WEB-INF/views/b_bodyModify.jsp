@@ -17,14 +17,16 @@
 	<br>
 	<hr>
 	
-	<form method="post">
+	<!-- update form action에 userId 포함 시켜야 정상적으로 update가 된다 -->
+	
+	<form action="modify?userId=${board.userId }" method="post">
 	
 	<strong style="position: absolute; left: 225px;">제목</strong>
 	
 	<br>
 	
 	<div style="text-align: center;">
-		<input type="text" style="width: 1070px;" readonly="readonly" value="${board.b_title }">
+		<input type="text" name = "b_title" style="width: 1070px;"  value="${board.b_title}"/>
 	</div>
 	
 	<br>
@@ -35,17 +37,20 @@
 	<br>
 
 	<div style="text-align: center;">
-		<textarea rows="20" cols="130" readonly="readonly">${board.b_body }</textarea>
+		<textarea name = "b_body" rows="20" cols="130" id = "b_body">${board.b_body}</textarea>
 	</div>
+	
 	
 	
 	<div style="position: absolute; left: 220px;">
-		<a class="btn btn-outline-primary btn-lg" href = "modify?userId=${board.userId }">수정하기</a>
-		<a class="btn btn-outline-primary btn-lg" href = "#">삭제하기</a>
+	
+		<input class="btn btn-outline-primary btn-lg" type="submit" value="수정하기"/>
+		
+		<input class="btn btn-outline-primary btn-lg" type="reset" value = "취소하기"/>
+		
 	</div>
 	
 	</form>
-	
 	
 	<br>
 	<br>

@@ -10,10 +10,12 @@ import com.ftnirp.board.dto.BoardVO;
 public interface BoardDAO {
 
 	
-	List<BoardVO> getList();
+	List<BoardVO> getList(); //전체 조회
 	
-	BoardVO listOne(Long userId);
+	BoardVO listOne(Long userId); //상세 조회
 	
-	int insertBoard(BoardVO params);
+	int insertBoard(BoardVO params); //글 생성
+	
+	void updateBoard(BoardVO params); //글 수정
 	
 }

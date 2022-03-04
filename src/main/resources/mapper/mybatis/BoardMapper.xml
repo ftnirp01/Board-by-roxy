@@ -20,7 +20,13 @@
 		sysdate
 		)
 	</insert>
-
+	
+	<update id="updateBoard" parameterType="com.ftnirp.board.dto.BoardVO">
+		UPDATE board_r SET
+		b_title = #{b_title},
+		b_body = #{b_body}
+		where userId = #{userId}
+	</update>
 
 
 
