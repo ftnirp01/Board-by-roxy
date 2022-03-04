@@ -19,7 +19,7 @@
 	
 	<!-- update form action에 userId 포함 시켜야 정상적으로 update가 된다 -->
 	
-	<form action="modify?userId=${board.userId }" method="post">
+	<form action="modify?userId=${board.userId }" method="post" accept-charset="utf-8">
 	
 	<strong style="position: absolute; left: 225px;">제목</strong>
 	
