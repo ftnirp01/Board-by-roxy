@@ -56,11 +56,11 @@
 					<li class="nav-item"><a class="nav-link" href="/" style="color: black;">Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="list" style="color: black;">Board</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="about.html" style="color: black;">About</a>
+					<li class="nav-item"><a class="nav-link" href="shop.html" style="color: black;">Shop</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="blog.html" style="color: black;">Blog</a>
+					<li class="nav-item"><a class="nav-link" href="nft.html" style="color: black;">NFT</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="contact.html" style="color: black;">Contact</a>
+					<li class="nav-item"><a class="nav-link" href="cart.html" style="color: black;">Cart</a>
 					</li>
 					<li class="nav-item"><a id="side-search-open" class="nav-link"
 						href="#" style="color: black;"> <span class="lnr lnr-magnifier" ></span>

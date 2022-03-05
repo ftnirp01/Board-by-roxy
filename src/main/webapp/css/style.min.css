@@ -4,7 +4,12 @@
  */
 html, body {
   width: 100%;
-  overflow-x: hidden; }
+  /* 스크롤바 
+  overflow-x: hidden;
+  */
+  
+  }
+  
 
 body {
   font-family: 'Lato', sans-serif;
