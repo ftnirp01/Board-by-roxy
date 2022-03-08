@@ -63,9 +63,9 @@ bottom: 0
 		<div>
 				<h2>회원가입</h2>
 			&nbsp; 
-			<a style="position: absolute; left: 1400px;" href = "/">home </a> 
-			<a style="position: absolute; left: 1440px">/</a>
-			 <a style="position: absolute; left: 1450px" href = "login">login</a>
+			<a  href = "/">home </a> 
+			<a >/</a>
+			 <a  href = "login">login</a>
 		</div>
 		
 		<hr>
@@ -76,14 +76,17 @@ bottom: 0
 		
 		
 			<div style="position: absolute; left: 530px;">
+			
+			
+			<form action="register" method="post" accept-charset="utf-8">
 		
-		
-			<input type="text" id ="fName" placeholder="이름(실명)" class = "login"><br>
-			<input type="text" id ="fId" placeholder="아이디" class = "login"><br>
-			<input type="password" id ="fPw" placeholder="비밀번호" class = "login"><br>
-			<input type="password" id ="fPwCheck" placeholder="비밀번호 확인" class = "login"><br>
-			<input type="text" id ="email" placeholder="이메일" class = "login"><br>
-			<input type="text" id ="phoneNum" placeholder="휴대폰번호" class = "login"><br>
+			<input type="text" name ="fName" placeholder="이름(실명)" class = "login"><br>
+			<input type="text" name ="fId" placeholder="아이디" class = "login"><br>
+			<input type="password" name ="fPw" placeholder="비밀번호" class = "login"><br>
+			<input type="password" name ="fPwCheck" placeholder="비밀번호 확인" class = "login"><br>
+			<input type="text" name ="email" placeholder="이메일" class = "login"><br>
+			<input type="text" name ="phoneNum" placeholder="휴대폰번호" class = "login"><br>
+			
 			
 			<br>
 			
@@ -321,7 +324,8 @@ bottom: 0
 			<br><br>
 			
 			
-			<button class = "login">가입완료</button>
+			<button class = "login" type = "submit">가입완료</button>
+			</form>
 			<br><br>
 			</div>
 		

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +40,13 @@
 
 </head>
 <body>
-
+	
+	<c:if >
+	
+	
+	
+	
+	</c:if>
 
 	<nav id="header-navbar" class="navbar navbar-expand-lg py-4">
 		<div class="container">

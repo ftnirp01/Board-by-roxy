@@ -63,9 +63,9 @@ bottom: 0
 		<div>
 				<h2>로그인</h2>
 			&nbsp; 
-			<a style="position: absolute; left: 1400px;" href = "/">home </a> 
-			<a style="position: absolute; left: 1440px">/</a>
-			 <a style="position: absolute; left: 1450px" href = "list">board</a>
+			<a  href = "/">home </a> 
+			<a >/</a>
+			 <a href = "join">join</a>
 		</div>
 		
 		<hr>
@@ -78,15 +78,21 @@ bottom: 0
 			<div style="position: absolute; left: 530px;">
 			
 			<br><br><br><br><br>
-		
-			<input type="text" id ="fId" placeholder="아이디" class = "login"><br>
-			<input type="password" id ="fPw" placeholder="비밀번호" class = "login"><br>
+			
+			<form action = "login" method="post">
+			<input type = "hidden" name = "loginSuccess" value="login">
+			<input type="text" name ="fId"  placeholder="아이디" class = "login"><br>
+			<input type="password" name ="fPw" placeholder="비밀번호" class = "login"><br>
 			
 			<br>
 			
-			<button class = "login">로그인</button>
+			<button class = "login" type = "submit">로그인</button>
+			</form>
+			
 			<br><br>
+			
 			아직 회원이 없으시면<a href = "join"> 회원가입</a>을 해주세요
+			
 			<br><br>
 			
 			</div>

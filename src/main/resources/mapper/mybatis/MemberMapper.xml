@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ftnirp.board.dao.MemberDAO">
+
+
+	<insert id="register" parameterType="com.ftnirp.board.dto.MemberVO">
+		INSERT INTO member_r 
+		VALUES (
+		MEMBER_SEQ.nextval,
+		#{fId},
+		#{fPw},
+		#{fPwCheck},
+		#{fName},
+		#{email},
+		#{phoneNum}
+		)
+	</insert>
+	
+	<select id = "loginCheck" parameterType="com.ftnirp.board.dto.MemberVO" resultType="com.ftnirp.board.dto.MemberVO">
+		SELECT * FROM member_r
+		where fId = #{fId} and 
+		fPw = #{fPw}
+	</select>
+
+
+
+
+
+
+</mapper>
