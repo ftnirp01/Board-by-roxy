@@ -1,13 +1,12 @@
 <%@page import="com.ftnirp.board.dto.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%@page import="java.*"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <!--
+<meta charset="EUC-KR">
+
+  <!--
      - Roxy: Bootstrap template by GettTemplates.com
      - https://gettemplates.co/roxy
     -->
@@ -35,9 +34,16 @@
     <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 
+
+
+
+
+
+
+<title>F.com</title>
 </head>
 <body data-spy="scroll" data-target="#navbar" class="static-layout">
-
+	
 <%MemberVO vo = (MemberVO)session.getAttribute("res");%>
 	<%if (vo == null) { %>
 	
@@ -66,11 +72,7 @@
 		</div>
 	</div>	
 	<%}%> 
-	
-		
-
-
-<div id="side-search" class="sidenav">
+	<div id="side-search" class="sidenav">
 	<a href="javascript:void(0)" id="side-search-close">&times;</a>
 	<div class="sidenav-content">
 		<form action="">
@@ -87,32 +89,91 @@
 		</form>
 	</div>
 	
-</div>	<div class="jumbotron d-flex align-items-center">
-  <div class="container text-center">
-    <h1 class="display-1 mb-4">BOARD</h1>
-  </div>
-  <div class="rectangle-1"></div>
-  <div class="rectangle-2"></div>
-  <div class="rectangle-transparent-1"></div>
-  <div class="rectangle-transparent-2"></div>
-  <div class="circle-1"></div>
-  <div class="circle-2"></div>
-  <div class="circle-3"></div>
-  <div class="triangle triangle-1">
-  	<img src="img/obj_triangle.png" alt="">
-  </div>
-  <div class="triangle triangle-2">
-  	<img src="img/obj_triangle.png" alt="">
-  </div>
-  <div class="triangle triangle-3">
-  	<img src="img/obj_triangle.png" alt="">
-  </div>
-  <div class="triangle triangle-4">
-  	<img src="img/obj_triangle.png" alt="">
-  </div>
-</div>	<!-- Features Section-->
+</div>	
+	
 
-	<!-- External JS -->
+<div id="side-nav" class="sidenav">
+	<a href="javascript:void(0)" id="side-nav-close">&times;</a>
+	
+	<div class="sidenav-content">
+		<p>
+			Kuncen WB1, Wirobrajan 10010, DIY
+		</p>
+		<p>
+			<span class="fs-16 primary-color">(+68) 120034509</span>
+		</p>
+		<p>info@yourdomain.com</p>
+	</div>
+</div><div id="side-search" class="sidenav">
+	<a href="javascript:void(0)" id="side-search-close">&times;</a>
+	<div class="sidenav-content">
+		<form action="">
+
+			<div class="input-group md-form form-sm form-2 pl-0">
+			  <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
+			  <div class="input-group-append">
+			    <button class="input-group-text red lighten-3" id="basic-text1">
+			    	<span class="lnr lnr-magnifier"></span>
+			    </button>
+			  </div>
+			</div>
+
+		</form>
+	</div>
+	
+</div>	<div class="jumbotron jumbotron-single d-flex align-items-center" style="background-image: url(img/bg.jpg)">
+  <div class="container text-center">
+    <h1 class="display-2 mb-4">Shop</h1>
+  </div>
+</div>	
+
+
+<!-- shop 공간 -->
+
+
+
+
+
+
+
+
+
+<!-- shop 공간 -->
+
+
+<footer class="mastfoot my-3">
+    <div class="inner container">
+         <div class="row">
+         	<div class="col-lg-4 col-md-12 d-flex align-items-center">
+         		
+         	</div>
+         	<div class="col-lg-4 col-md-12 d-flex align-items-center">
+         		<p class="mx-auto text-center mb-0">&copy; 2019 Roxy. Design by <a href="https://gettemplates.co" target="_blank">GetTemplates</a>.</p>
+         	</div>
+           
+            <div class="col-lg-4 col-md-12">
+            	<nav class="nav nav-mastfoot justify-content-center">
+	                <a class="nav-link" href="#">
+	                	<i class="fab fa-facebook-f"></i>
+	                </a>
+	                <a class="nav-link" href="#">
+	                	<i class="fab fa-twitter"></i>
+	                </a>
+	                <a class="nav-link" href="#">
+	                	<i class="fab fa-instagram"></i>
+	                </a>
+	                <a class="nav-link" href="#">
+	                	<i class="fab fa-linkedin"></i>
+	                </a>
+	                <a class="nav-link" href="#">
+	                	<i class="fab fa-youtube"></i>
+	                </a>
+	            </nav>
+            </div>
+            
+        </div>
+    </div>
+</footer>	<!-- External JS -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 	<script src="vendor/bootstrap/popper.min.js"></script>
 	<script src="vendor/bootstrap/bootstrap.min.js"></script>
@@ -127,78 +188,5 @@
 	<!-- Main JS -->
 	<script src="js/app.min.js "></script>
 	<script src="//localhost:35729/livereload.js"></script>
-	
-	
-	<br><br>
-	
-	<div style="text-align: center;">
-		<h1>문의사항</h1>
-	</div>
-	<br><br>
-	
-	<hr>
-	
-	<div class = "row text-center">
-		<div class = "col-md-3">
-			<strong>번호</strong>
-		</div>
-		<div class = "col-md-3">
-			<strong>제목</strong>
-		</div>
-		<div class = "col-md-3">
-			<strong>글쓴이</strong>
-		</div>
-		<div class = "col-md-3">
-			<strong>등록일</strong>
-		</div>
-	</div>
-	
-	<hr>	
-	
-	<c:forEach items="${list}" var="board">
-	
-	
-	
-	<div class = "row text-center mt-4">
-		<div class = "col-md-3">
-			<p>${board.userId}</p>
-		</div>
-		<div class = "col-md-3">
-			<a href = "body?userId=${board.userId }">${board.b_title }</a>
-		</div>
-		<div class = "col-md-3">
-			<p>${board.userName}</p>
-		</div>
-		<div class = "col-md-3">
-			<p>${board.regDate }</p>
-		</div>
-	</div>
-	
-	<hr>
-	
-	</c:forEach>
-	
-	
-	<!-- 페이징 -->
-	<div  style="text-align: center;">
-		<a class = "btn">1</a>
-	</div>
-	
-	<!-- 글 작성 버튼 -->
-	
-	<div style="position: absolute; left: 160px;">
-		<a class="btn btn-outline-primary btn-lg" href = "write">문의하기</a>
-	</div>
-
-	
-	
-	
-	<br><br>
-	<hr>
-	<%@ include file = "footer.jsp" %>
-	
-	
-	
-	<!-- @@@@@@@@ -->
 </body>
 </html>

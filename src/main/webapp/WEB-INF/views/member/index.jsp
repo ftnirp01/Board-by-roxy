@@ -42,27 +42,37 @@
 <title>F.com</title>
 </head>
 <body data-spy="scroll" data-target="#navbar" class="static-layout">
-	<%MemberVO vo = (MemberVO)session.getAttribute("res");%>
+
+<%MemberVO vo = (MemberVO)session.getAttribute("res");%>
 	<%if (vo == null) { %>
 	
 	<%@include file = "header.jsp" %>
+	<div id="side-nav" class="sidenav">
+	<a href="javascript:void(0)" id="side-nav-close">&times;</a>
+		<div class="sidenav-content">
+			프로필을 확인하려면
+			<a href = "login">로그인</a> ============ <a href = "join">회원가입</a>
+		</div>
+	</div>	
 	
 	<%} else { %>
 	
-	<%}%> <%@include file = "header_login.jsp" %>
-<div id="side-nav" class="sidenav">
-	<a href="javascript:void(0)" id="side-nav-close">&times;</a>
-	
-	<div class="sidenav-content">
-		<p>
-			Name : HYUN JI CHOI <br> Age : 22
-		</p>
-		<p>
-			<span class="fs-16 primary-color">(+82)10-4555-1009</span>
-		</p>
-		<p>ftnirp@naver.com</p>
-	</div>
-</div><div id="side-search" class="sidenav">
+	<%@include file = "header_login.jsp" %>
+	<div id="side-nav" class="sidenav">
+		<a href="javascript:void(0)" id="side-nav-close">&times;</a>
+		<div class="sidenav-content">
+			<p>
+				Name : <%=vo.getFName() %> <br> ID :  <%=vo.getFId() %>
+			</p>
+			<p>
+				<span class="fs-16 primary-color">PH : <%=vo.getPhoneNum() %></span>
+			</p>
+			<p>email : <%=vo.getEmail() %></p>
+		</div>
+	</div>	
+	<%}%> 
+
+<div id="side-search" class="sidenav">
 	<a href="javascript:void(0)" id="side-search-close">&times;</a>
 	<div class="sidenav-content">
 		<form action="">

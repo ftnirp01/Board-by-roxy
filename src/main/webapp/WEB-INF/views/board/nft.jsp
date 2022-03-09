@@ -1,8 +1,12 @@
+<%@page import="com.ftnirp.board.dto.MemberVO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <!--
+<meta charset="EUC-KR">
+
+  <!--
      - Roxy: Bootstrap template by GettTemplates.com
      - https://gettemplates.co/roxy
     -->
@@ -30,15 +34,43 @@
     <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 
+
+
+
+
+
+<title>F.com</title>
 </head>
 <body data-spy="scroll" data-target="#navbar" class="static-layout">
-<div id="side-nav" class="sidenav">
+
+<%MemberVO vo = (MemberVO)session.getAttribute("res");%>
+	<%if (vo == null) { %>
+	
+	<%@include file = "header.jsp" %>
+	<div id="side-nav" class="sidenav">
 	<a href="javascript:void(0)" id="side-nav-close">&times;</a>
 		<div class="sidenav-content">
-			í”„ë¡œí•„ì„ í™•ì¸í•˜ë ¤ë©´
-			<a href = "login">ë¡œê·¸ì¸</a> ============ <a href = "join">íšŒì›ê°€ìž…</a>
+			ÇÁ·ÎÇÊÀ» È®ÀÎÇÏ·Á¸é
+			<a href = "login">·Î±×ÀÎ</a> ============ <a href = "join">È¸¿ø°¡ÀÔ</a>
 		</div>
-</div>	
+	</div>	
+	
+	<%} else { %>
+	
+	<%@include file = "header_login.jsp" %>
+	<div id="side-nav" class="sidenav">
+		<a href="javascript:void(0)" id="side-nav-close">&times;</a>
+		<div class="sidenav-content">
+			<p>
+				Name : <%=vo.getFName() %> <br> ID :  <%=vo.getFId() %>
+			</p>
+			<p>
+				<span class="fs-16 primary-color">PH : <%=vo.getPhoneNum() %></span>
+			</p>
+			<p>email : <%=vo.getEmail() %></p>
+		</div>
+	</div>	
+	<%}%> 
 
 <div id="side-search" class="sidenav">
 	<a href="javascript:void(0)" id="side-search-close">&times;</a>
@@ -57,51 +89,8 @@
 		</form>
 	</div>
 	
-</div>	<nav id="header-navbar" class="navbar navbar-expand-lg py-4">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center text-white" href="/">
-            <h3 class="font-weight-bolder mb-0">Ftnirp</h3>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav-header" aria-controls="navbar-nav-header" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="lnr lnr-menu"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar-nav-header">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="list">Board</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="shop.html">Shop</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="nft.html">NFT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cart.html">Cart</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="join">Join</a>
-                </li>
-                <li class="nav-item">
-                    <a id="side-search-open" class="nav-link" href="#">
-                        <span class="lnr lnr-magnifier"></span>
-                    </a>
-                </li>
-                 <li class="nav-item only-desktop">
-                    <a class="nav-link" id="side-nav-open" href="#">
-                        <span class="lnr lnr-menu"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+</div>	
+
 
 <div id="side-nav" class="sidenav">
 	<a href="javascript:void(0)" id="side-nav-close">&times;</a>
@@ -115,7 +104,9 @@
 		</p>
 		<p>info@yourdomain.com</p>
 	</div>
-</div><div id="side-search" class="sidenav">
+</div>
+
+<div id="side-search" class="sidenav">
 	<a href="javascript:void(0)" id="side-search-close">&times;</a>
 	<div class="sidenav-content">
 		<form action="">
@@ -163,13 +154,13 @@
                                         <a href="#"><h6><small>Space</small></h6></a>
                                     </div>
                                     <div class="blog-title">
-                                        <a href="single.html"><h4>ê³µê°„ì˜ ë¯¸</h4></a>
+                                        <a href="single.html"><h4>°ø°£ÀÇ ¹Ì</h4></a>
                                     </div>
                                     <div class="blog-meta">
                                         <p class="blog-date">2021/12/30</p>
                                     </div>
                                     <div class="blog-desc">
-                                        <p>ê³µê°„ì ì¸ ì•„ë¦„ë‹¤ì›€</p>
+                                        <p>°ø°£ÀûÀÎ ¾Æ¸§´Ù¿ò</p>
                                     </div>
                                     <div class="blog-author">
                                         <p>855,000  won</p>
@@ -197,13 +188,13 @@
                                         <a href="#"><h6><small>Biology</small></h6></a>
                                     </div>
                                     <div class="blog-title">
-                                        <a href="#"><h4>íƒ„ìƒì˜ ë¯¸</h4></a>
+                                        <a href="#"><h4>Åº»ýÀÇ ¹Ì</h4></a>
                                     </div>
                                     <div class="blog-meta">
                                         <p class="blog-date">2020/4/27</p>
                                     </div>
                                     <div class="blog-desc">
-                                        <p>íƒ„ìƒì€ ê³§ ì¶•ë³µ ê·¼ë³¸ì ì¸ ì•„ë¦„ë‹¤ì›€</p>
+                                        <p>Åº»ýÀº °ð Ãàº¹ ±Ùº»ÀûÀÎ ¾Æ¸§´Ù¿ò</p>
                                     </div>
                                     <div class="blog-author">
                                         <p>620,000  won</p>
@@ -231,13 +222,13 @@
                                         <a href="#"><h6><small>Art</small></h6></a>
                                     </div>
                                     <div class="blog-title">
-                                        <a href="#"><h4>ì¶”ìƒì˜ ë¯¸</h4></a>
+                                        <a href="#"><h4>Ãß»óÀÇ ¹Ì</h4></a>
                                     </div>
                                     <div class="blog-meta">
                                         <p class="blog-date">2022/1/17</p>
                                     </div>
                                     <div class="blog-desc">
-                                        <p>ì—¬ëŸ¬ ê´€ì ìœ¼ë¡œ ë³¼ ìˆ˜ ìžˆëŠ” ì¶”ìƒì˜ ë¯¸<br> ëŒ€ì¤‘ë“¤ì—ê²Œ ë§Žì€ ì˜ë¯¸ë¥¼ ì „ë‹¬í•´ì£¼ëŠ” ë§¤ê°œì²´</p>
+                                        <p>¿©·¯ °üÁ¡À¸·Î º¼ ¼ö ÀÖ´Â Ãß»óÀÇ ¹Ì<br> ´ëÁßµé¿¡°Ô ¸¹Àº ÀÇ¹Ì¸¦ Àü´ÞÇØÁÖ´Â ¸Å°³Ã¼</p>
                                     </div>
                                     <div class="blog-author">
                                         <p>345,000  won</p>

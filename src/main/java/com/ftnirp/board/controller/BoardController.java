@@ -26,7 +26,25 @@ public class BoardController {
 		
 		return "board/list";
 	}
+	
+	//로그인중 --------------------------------------------------------------
+	
+	@RequestMapping("/shop")
+	public String showShop() {
+		return "board/shop";
+	}
+	
+	@RequestMapping("/nft")
+	public String showNft() {
+		return "board/nft";
+	}
+	
+	@RequestMapping("/cart")
+	public String showCart() {
+		return "board/cart";
+	}
 
+	//로그인중 --------------------------------------------------------------
 	
 	@RequestMapping("/write")
 	public String showWrite() {

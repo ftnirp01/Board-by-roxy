@@ -1,8 +1,12 @@
+<%@page import="com.ftnirp.board.dto.MemberVO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <!--
+<meta charset="EUC-KR">
+
+  <!--
      - Roxy: Bootstrap template by GettTemplates.com
      - https://gettemplates.co/roxy
     -->
@@ -30,62 +34,42 @@
     <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 
+
+
+<title>F.com</title>
 </head>
 <body data-spy="scroll" data-target="#navbar-nav-header" class="static-layout">
 	<div class="boxed-page">
-		<nav id="header-navbar" class="navbar navbar-expand-lg py-4">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center text-white" href="/">
-            <h3 class="font-weight-bolder mb-0">Ftnirp</h3>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav-header" aria-controls="navbar-nav-header" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="lnr lnr-menu"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar-nav-header">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="list">Board</a>
-                </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="shop.html">Shop</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="nft.html">NFT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cart.html">Cart</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="join">Join</a>
-                </li>
-                <li class="nav-item">
-                    <a id="side-search-open" class="nav-link" href="#">
-                        <span class="lnr lnr-magnifier"></span>
-                    </a>
-                </li>
-                 	<li class="nav-item only-desktop">
-                    	<a class="nav-link" id="side-nav-open" href="#">
-                        	<span class="lnr lnr-menu"></span>
-                    	</a>
-                	</li>
-            	</ul>
-        	</div>
-    	</div>
-	</nav>
+		
+
+<%MemberVO vo = (MemberVO)session.getAttribute("res");%>
+	<%if (vo == null) { %>
+	
+	<%@include file = "header.jsp" %>
+	
+	<%} else { %>
+	
+	<%}%> <%@include file = "header_login.jsp" %>
+
+		
+		
 </div>
+
+
 <div id="side-nav" class="sidenav">
 	<a href="javascript:void(0)" id="side-nav-close">&times;</a>
-		<div class="sidenav-content">
-			í”„ë¡œí•„ì„ í™•ì¸í•˜ë ¤ë©´
-			<a href = "login">ë¡œê·¸ì¸</a> ============ <a href = "join">íšŒì›ê°€ìž…</a>
-		</div>
-</div>
+	<div class="sidenav-content">
+		<p>
+			Name : <%=vo.getFName() %> <br> ID :  <%=vo.getFId() %>
+		</p>
+		<p>
+			<span class="fs-16 primary-color">PH : <%=vo.getPhoneNum() %></span>
+		</p>
+		<p>email : <%=vo.getEmail() %></p>
+	</div>
+</div>	
+
+
 
 <div id="side-search" class="sidenav">
 	<a href="javascript:void(0)" id="side-search-close">&times;</a>
@@ -121,7 +105,7 @@
 				<hr>
 					<div>
                         <div style="text-align: center;">
-                            <table summary="ë²ˆí˜¸, ì‚¬ì§„, ì œí’ˆëª…, ìˆ˜ëŸ‰, ì ë¦½, ê°€ê²©, ë°°ì†¡ë¹„, ì·¨ì†Œ">
+                            <table summary="¹øÈ£, »çÁø, Á¦Ç°¸í, ¼ö·®, Àû¸³, °¡°Ý, ¹è¼Ûºñ, Ãë¼Ò">
                                 <colgroup>
                                     <col width="180" />
                                     <col width="195" />
@@ -134,14 +118,14 @@
                                 </colgroup>
                                 <thead>
                                     <tr>
-                                        <th scope="col"><div class="tb-center">ë²ˆí˜¸</div></th>
-                                        <th scope="col"><div class="tb-center">ì‚¬ì§„</div></th>
-                                        <th scope="col"><div class="tb-center">ìƒí’ˆëª…</div></th>
-                                        <th scope="col"><div class="tb-center">ìˆ˜ëŸ‰</div></th>
-                                        <th scope="col"><div class="tb-center">ì ë¦½</div></th>
-                                        <th scope="col"><div class="tb-center">ê¸ˆì•¡</div></th>
-                                        <th scope="col"><div class="tb-center">ë°°ì†¡ë¹„</div></th>
-                                        <th scope="col"><div class="tb-center">ì·¨ì†Œ</div></th>
+                                        <th scope="col"><div class="tb-center">¹øÈ£</div></th>
+                                        <th scope="col"><div class="tb-center">»çÁø</div></th>
+                                        <th scope="col"><div class="tb-center">»óÇ°¸í</div></th>
+                                        <th scope="col"><div class="tb-center">¼ö·®</div></th>
+                                        <th scope="col"><div class="tb-center">Àû¸³</div></th>
+                                        <th scope="col"><div class="tb-center">±Ý¾×</div></th>
+                                        <th scope="col"><div class="tb-center">¹è¼Ûºñ</div></th>
+                                        <th scope="col"><div class="tb-center">Ãë¼Ò</div></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -151,14 +135,14 @@
                         
                         <hr>
 
-						<div style="text-align: center;">ìž¥ë°”êµ¬ë‹ˆì— ë‹´ê¸´ ìƒí’ˆì´ ì—†ìŠµë‹ˆë‹¤.</div>
+						<div style="text-align: center;">Àå¹Ù±¸´Ï¿¡ ´ã±ä »óÇ°ÀÌ ¾ø½À´Ï´Ù.</div>
 						<hr>                        
                         
                         <div style="text-align: center;">
-                            <a href="javascript:alert('ì£¼ë¬¸ì´ ê°€ëŠ¥í•œ ê¸ˆì•¡ì´ ì•„ë‹™ë‹ˆë‹¤.ê³ ê°ì„¼í„°ì— ë¬¸ì˜ ë°”ëžë‹ˆë‹¤.')" class="btn btn-outline-primary btn-lg">ì£¼ë¬¸í•˜ê¸°</a>
-                            <a href="/shop.html" class="btn btn-outline-primary btn-lg">ê³„ì† ì‡¼í•‘í•˜ê¸°</a>
-                            <a href="javascript:basket_clear();" class="btn btn-outline-primary btn-lg">ìž¥ë°”êµ¬ë‹ˆ ë¹„ìš°ê¸°</a>
-                            <a href="javascript:basket_estimate()" class="btn btn-outline-primary btn-lg">ê²¬ì ì„œ ì¶œë ¥</a>
+                            <a href="javascript:alert('ÁÖ¹®ÀÌ °¡´ÉÇÑ ±Ý¾×ÀÌ ¾Æ´Õ´Ï´Ù.°í°´¼¾ÅÍ¿¡ ¹®ÀÇ ¹Ù¶ø´Ï´Ù.')" class="btn btn-outline-primary btn-lg">ÁÖ¹®ÇÏ±â</a>
+                            <a href="/shop.html" class="btn btn-outline-primary btn-lg">°è¼Ó ¼îÇÎÇÏ±â</a>
+                            <a href="javascript:basket_clear();" class="btn btn-outline-primary btn-lg">Àå¹Ù±¸´Ï ºñ¿ì±â</a>
+                            <a href="javascript:basket_estimate()" class="btn btn-outline-primary btn-lg">°ßÀû¼­ Ãâ·Â</a>
                         </div>
 		<hr>
 		
@@ -171,7 +155,7 @@
             <!-- Section Title -->
             <div class="title-wrap" data-aos="fade-up">
                 <h2 class="section-title">Feedback</h2>
-                <p class="section-sub-title">ê±´ì˜ ì‚¬í•­ì€ í™˜ì˜ìž…ë‹ˆë‹¤ !</p>
+                <p class="section-sub-title">°ÇÀÇ »çÇ×Àº È¯¿µÀÔ´Ï´Ù !</p>
             </div>
             <!-- End of Section Title -->
             <div class="row">
