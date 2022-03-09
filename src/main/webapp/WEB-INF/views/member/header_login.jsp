@@ -41,17 +41,11 @@
 </head>
 <body>
 	
-	<c:if >
-	
-	
-	
-	
-	</c:if>
 
 	<nav id="header-navbar" class="navbar navbar-expand-lg py-4">
 		<div class="container">
 			<a class="navbar-brand d-flex align-items-center text-white" href="/">
-				<h3 class="font-weight-bolder mb-0" style="color: black;">Ftnirp</h3>
+				<h3 class="font-weight-bolder mb-0">Ftnirp</h3>
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbar-nav-header" aria-controls="navbar-nav-header"
@@ -60,20 +54,28 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbar-nav-header">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="/" style="color: black;">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="list" style="color: black;">Board</a>
+					<li class="nav-item">
+							<a class="nav-link" href="loginSuccess" >Home</a></li>
+					<li class="nav-item">
+							<a class="nav-link" href="list" >Board</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="shop.html" style="color: black;">Shop</a>
+					<li class="nav-item">
+							<a class="nav-link" href="shop.html" >Shop</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="nft.html" style="color: black;">NFT</a>
+					<li class="nav-item">
+							<a class="nav-link" href="nft.html" >NFT</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="cart.html" style="color: black;">Cart</a>
+					<li class="nav-item">
+							<a class="nav-link" href="cart.html" >Cart</a>
 					</li>
+					   <li class="nav-item">
+                    		<a class="nav-link" href="#">LogOut</a>
+                	</li>
 					<li class="nav-item"><a id="side-search-open" class="nav-link"
-						href="#" style="color: black;"> <span class="lnr lnr-magnifier" ></span>
+						href="#"> <span class="lnr lnr-magnifier" ></span>
 					</a></li>
 					<li class="nav-item only-desktop"><a class="nav-link"
-						id="side-nav-open" href="#" style="color: black;"> <span class="lnr lnr-menu"></span>
+						id="side-nav-open" href="#" > <span class="lnr lnr-menu"></span>
 					</a></li>
 				</ul>
 			</div>

@@ -26,13 +26,18 @@ public class MemberController {
 	
 	@RequestMapping("/login")
 	public String showLogin() {
-		return "login";
+		return "member/login";
+	}
+	
+	@RequestMapping("/loginSuccess")
+	public String loginSuccess() {
+		return "member/index";
 	}
 	
 	
 	@RequestMapping("/join")
 	public String showJoin() {
-		return "join";
+		return "member/join";
 	}
 	
 	@PostMapping("/register")
@@ -68,7 +73,7 @@ public class MemberController {
 			System.out.println("로그인 성공");
 			session.setAttribute("res", res);
 			mav.addObject("msg" , "Success");
-			return "redirect:/";
+			return "redirect:/loginSuccess";
 		}else {
 			mav.addObject("msg" , "Failure");
 			return "redirect:/login";
@@ -77,7 +82,7 @@ public class MemberController {
 	
 	@RequestMapping("/test")
 	public String test() {
-		return "/Login_test";
+		return "member/Login_test";
 	}
 	
 	

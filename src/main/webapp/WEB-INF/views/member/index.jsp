@@ -1,9 +1,11 @@
-
+<%@page import="com.ftnirp.board.dto.MemberVO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <!--
+
+<!--
      - Roxy: Bootstrap template by GettTemplates.com
      - https://gettemplates.co/roxy
     -->
@@ -31,54 +33,23 @@
     <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 
+
+
+
+
+
+<meta charset="EUC-KR">
+<title>F.com</title>
 </head>
 <body data-spy="scroll" data-target="#navbar" class="static-layout">
-	<nav id="header-navbar" class="navbar navbar-expand-lg py-4">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center text-white" href="/">
-            <h3 class="font-weight-bolder mb-0">Ftnirp</h3>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav-header" aria-controls="navbar-nav-header" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="lnr lnr-menu"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar-nav-header">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="list">Board</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="shop.html">Shop</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="nft.html">NFT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cart.html">Cart</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="join">Join</a>
-                </li>
-                <li class="nav-item">
-                    <a id="side-search-open" class="nav-link" href="#">
-                        <span class="lnr lnr-magnifier"></span>
-                    </a>
-                </li>
-                 <li class="nav-item only-desktop">
-                    <a class="nav-link" id="side-nav-open" href="#">
-                        <span class="lnr lnr-menu"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
+	<%MemberVO vo = (MemberVO)session.getAttribute("res");%>
+	<%if (vo == null) { %>
+	
+	<%@include file = "header.jsp" %>
+	
+	<%} else { %>
+	
+	<%}%> <%@include file = "header_login.jsp" %>
 <div id="side-nav" class="sidenav">
 	<a href="javascript:void(0)" id="side-nav-close">&times;</a>
 	
@@ -110,7 +81,13 @@
 	
 </div>	<div class="jumbotron d-flex align-items-center">
   <div class="container text-center">
-    <h1 class="display-1 mb-4">F.shop</h1>
+  
+  
+  	
+    		
+  
+  
+    <h1 class="display-1 mb-4">Welcome</h1>
   </div>
   <div class="rectangle-1"></div>
   <div class="rectangle-2"></div>
@@ -148,20 +125,20 @@
             <div class="row text-center">
                 <div class="col-md-4 col-sm-6" data-aos="fade-up">
                     <img class="rounded-circle" src="img/icons/animat-checkmark.gif" alt="Generic placeholder image" width="140" height="140">
-                    <h5 class="mb-4">ê°„ë‹¨í•˜ê³  í´ë¦°í•´ìš”</h5>
-                    <p>F.shopì€ ì‚¬ìš©ìžì—ê²Œ ê°„ë‹¨í•œ UIë¥¼ ì œê³µí•˜ê¸° ìœ„í•´ì„œ ì œìž‘ ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+                    <h5 class="mb-4">°£´ÜÇÏ°í Å¬¸°ÇØ¿ä</h5>
+                    <p>F.shopÀº »ç¿ëÀÚ¿¡°Ô °£´ÜÇÑ UI¸¦ Á¦°øÇÏ±â À§ÇØ¼­ Á¦ÀÛ µÇ¾ú½À´Ï´Ù.</p>
                 </div>
                 <!-- /.col-md-4 col-sm-6  -->
                 <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
                     <img class="rounded-circle" src="img/icons/animat-customize.gif" alt="Generic placeholder image" width="140" height="140">
-                    <h5 class="mb-4">ì§„í–‰ìƒí™© ì²´í¬ê°€ ì‰¬ì›Œìš”</h5>
-                    <p>F.shopì€ ì‚¬ìš©ìžë¥¼ ìœ„í•œ ëª¨ë“  ì§„í–‰ìƒí™©ì´ <br> ê°„ë‹¨í•˜ê²Œ ì œê³µ ë©ë‹ˆë‹¤.</p>
+                    <h5 class="mb-4">ÁøÇà»óÈ² Ã¼Å©°¡ ½¬¿ö¿ä</h5>
+                    <p>F.shopÀº »ç¿ëÀÚ¸¦ À§ÇÑ ¸ðµç ÁøÇà»óÈ²ÀÌ <br> °£´ÜÇÏ°Ô Á¦°ø µË´Ï´Ù.</p>
                 </div>
                 <!-- /.col-md-4 col-sm-6  -->
                 <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="400">
                     <img class="rounded-circle" src="img/icons/animat-responsive.gif" alt="Generic placeholder image" width="140" height="140">
-                    <h5 class="mb-4">ëª¨ë“  ë””ë°”ì´ìŠ¤ì—ì„œ ì‚¬ìš©ê°€ëŠ¥í•´ìš”</h5>
-                    <p>F.shopì€ ì–¸ì œ ì–´ë””ì„œë‚˜ ì‚¬ìš©í•  ìˆ˜ ìžˆê²Œ <br> ì œìž‘ ë˜ì—ˆìŠµë‹ˆë‹¤.</p>
+                    <h5 class="mb-4">¸ðµç µð¹ÙÀÌ½º¿¡¼­ »ç¿ë°¡´ÉÇØ¿ä</h5>
+                    <p>F.shopÀº ¾ðÁ¦ ¾îµð¼­³ª »ç¿ëÇÒ ¼ö ÀÖ°Ô <br> Á¦ÀÛ µÇ¾ú½À´Ï´Ù.</p>
                 </div>
                 <!-- /.col-md-4 col-sm-6  -->
             </div>
@@ -172,16 +149,11 @@
     	<hr>
     	<br>
     		<div style="text-align: center;">
-                	<h2 class="section-title">ë§Œì¡±ë„</h2>
+                	<h2 class="section-title">¸¸Á·µµ</h2>
     		</div>
     	<br>
     	
-    	<!-- res_test -->
-    	<div>
-    	
-    	</div>
-    	<!--  -->
-    		
+    
 </section>	<section id="skills" class="bg-white">
     <div class="container">
         <div class="section-content pt-0">
@@ -191,7 +163,7 @@
                     <!-- Skill Item -->
                     <div class="skill-item">
                         <div class="d-flex justify-content-between">
-                             <p>ì œí’ˆì˜ í€„ë¦¬í‹°</p>
+                             <p>Á¦Ç°ÀÇ Ä÷¸®Æ¼</p>
                             <p class="text-muted">90%</p>
                         </div>
                         <div class="progress" data-percent="90%">
@@ -202,7 +174,7 @@
                     <!-- Skill Item -->
                     <div class="skill-item">
                         <div class="d-flex justify-content-between">
-                            <p>ì„œë¹„ìŠ¤</p>
+                            <p>¼­ºñ½º</p>
                             <p class="text-muted">85%</p>
                         </div>
                          <div class="progress" data-percent="85%">
@@ -213,7 +185,7 @@
                     <!-- Skill Item -->
                     <div class="skill-item">
                         <div class="d-flex justify-content-between">
-                            <p>ê°€ê²©</p>
+                            <p>°¡°Ý</p>
                             <p class="text-muted">73%</p>
                         </div>
                          <div class="progress" data-percent="73%">
@@ -226,7 +198,7 @@
                     <!-- Skill Item -->
                     <div class="skill-item">
                         <div class="d-flex justify-content-between">
-                            <p>ì œí’ˆì˜ ì‹ ì„ í•¨</p>
+                            <p>Á¦Ç°ÀÇ ½Å¼±ÇÔ</p>
                             <p class="text-muted">80%</p>
                         </div>
                          <div class="progress" data-percent="80%">
@@ -237,7 +209,7 @@
                     <!-- Skill Item -->
                     <div class="skill-item">
                         <div class="d-flex justify-content-between">
-                            <p>ë°°ì†¡ê¸°ê°„</p>
+                            <p>¹è¼Û±â°£</p>
                             <p class="text-muted">60%</p>
                         </div>
                          <div class="progress" data-percent="60%">
@@ -248,7 +220,7 @@
                     <!-- Skill Item -->
                     <div class="skill-item">
                         <div class="d-flex justify-content-between">
-                            <p>ë¬¸ì˜ ë‹µë³€</p>
+                            <p>¹®ÀÇ ´äº¯</p>
                             <p class="text-muted">55%</p>
                         </div>
                          <div class="progress" data-percent="55%">

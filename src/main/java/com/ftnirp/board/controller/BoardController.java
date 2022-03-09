@@ -24,13 +24,13 @@ public class BoardController {
 		List<BoardVO> elist = boardService.getList();
 		model.addAttribute("list", elist);
 		
-		return "list";
+		return "board/list";
 	}
 
 	
 	@RequestMapping("/write")
 	public String showWrite() {
-		return "write";
+		return "board/write";
 	}
 	
 	@RequestMapping("/body")
@@ -45,7 +45,7 @@ public class BoardController {
 			}
 			model.addAttribute("board",board);
 		}
-		return "b_body";
+		return "board/b_body";
 	}
 	
 	@PostMapping("/insert")
@@ -76,7 +76,7 @@ public class BoardController {
 			}
 			model.addAttribute("board",board);
 		}
-		return "b_bodyModify";
+		return "board/b_bodyModify";
 	}
 	
 	@PostMapping("/modify")
