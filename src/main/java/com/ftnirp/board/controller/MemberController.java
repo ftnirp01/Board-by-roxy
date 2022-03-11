@@ -42,7 +42,7 @@ public class MemberController {
 	}
 	
 	@PostMapping("/register")
-	public String register(MemberVO params , HttpServletResponse response) throws IOException {
+	public void register(MemberVO params , HttpServletResponse response) throws IOException {
 		
 		int isRegister = service.register(params);
 		
@@ -50,19 +50,18 @@ public class MemberController {
 			System.out.println("회원가입 실패");
 		}else {
 			 System.out.println("alert 띄움");
+			 response.setContentType("text/html; charset=UTF-8");
 			 PrintWriter writer = response.getWriter();
 	         writer.println("<script type = 'text/javascript'>");
 	         writer.println("alert('회원가입 되었습니다.');");
+	         writer.println("location.href='/';");
 	         writer.println("</script>");
 		}
-		
-		return "redirect:/";
-		
 	}
 	
 	
 	@PostMapping("/login")
-	public String loginCheck(@ModelAttribute MemberVO params , HttpServletRequest request) {
+	public void loginCheck(@ModelAttribute MemberVO params , HttpServletRequest request , HttpServletResponse response) throws IOException {
 		
 		HttpSession session = request.getSession();
 		MemberVO res = service.loginCheck(params);
@@ -74,20 +73,37 @@ public class MemberController {
 			System.out.println("로그인 성공");
 			session.setAttribute("res", res);
 			mav.addObject("msg" , "Success");
-			return "redirect:/loginSuccess";
+			 response.setContentType("text/html; charset=UTF-8");
+			 PrintWriter writer = response.getWriter();
+	         writer.println("<script type = 'text/javascript'>");
+	         writer.println("location.href='loginSuccess';");
+	         writer.println("</script>");
+		
 		}else {
 			mav.addObject("msg" , "Failure");
-			return "redirect:/login";
+			 response.setContentType("text/html; charset=UTF-8");
+			 PrintWriter writer = response.getWriter();
+	         writer.println("<script type = 'text/javascript'>");
+	         writer.println("alert('아이디 또는 비밀번호가 일치하지 않습니다.');");
+	         writer.println("location.href='login';");
+	         writer.println("</script>");
 		}
 	}
 	
 	@GetMapping("/logout")
-	public String logout(HttpServletRequest request) {
+	public void logout(HttpServletRequest request , HttpServletResponse response) throws IOException {
 		
 		HttpSession session = request.getSession();
 		session.invalidate();
+		
 		System.out.println("로그아웃 완료");
-		return "redirect:/";
+		
+		 response.setContentType("text/html; charset=UTF-8");
+		 PrintWriter writer = response.getWriter();
+         writer.println("<script type = 'text/javascript'>");
+         writer.println("alert('로그아웃이 정상적으로 되었습니다.');");
+         writer.println("location.href='/';");
+         writer.println("</script>");
 		
 	}
 	

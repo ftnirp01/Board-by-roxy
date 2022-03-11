@@ -80,17 +80,17 @@ bottom: 0
 			
 			<form action="register" method="post" accept-charset="utf-8">
 		
-			<input type="text" name ="fName" placeholder="이름(실명)" class = "login"><br>
-			<input type="text" name ="fId" placeholder="아이디" class = "login"><br>
-			<input type="password" name ="fPw" placeholder="비밀번호" class = "login"><br>
-			<input type="password" name ="fPwCheck" placeholder="비밀번호 확인" class = "login"><br>
-			<input type="text" name ="email" placeholder="이메일" class = "login"><br>
-			<input type="text" name ="phoneNum" placeholder="휴대폰번호" class = "login"><br>
+			<input type="text" name ="fName" placeholder="이름(실명)" class = "login" required><br>
+			<input type="text" name ="fId" placeholder="아이디" class = "login" required><br>
+			<input type="password" name ="fPw" placeholder="비밀번호" class = "login" required><br>
+			<input type="password" name ="fPwCheck" placeholder="비밀번호 확인" class = "login" required><br>
+			<input type="text" name ="email" placeholder="이메일" class = "login" required><br>
+			<input type="text" name ="phoneNum" placeholder="휴대폰번호" class = "login" required><br>
 			
 			
 			<br>
 			
-			<input type = "checkbox"> <strong>14세이상입니다.</strong>
+			<input type = "checkbox" required > <strong>14세이상입니다.</strong>
 			
 			<br>
 			<br>
@@ -318,7 +318,7 @@ bottom: 0
 			
 			<br>			
 			
-			<input type = "checkbox">
+			<input type = "checkbox" required>
 			이용약관을 동의합니다.
 			
 			<br><br>

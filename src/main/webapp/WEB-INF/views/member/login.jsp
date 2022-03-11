@@ -1,3 +1,4 @@
+<%@page import="com.ftnirp.board.dto.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -80,9 +81,10 @@ bottom: 0
 			<br><br><br><br><br>
 			
 			<form action = "login" method="post">
+			
 			<input type = "hidden" name = "loginSuccess" value="login">
-			<input type="text" name ="fId"  placeholder="아이디" class = "login"><br>
-			<input type="password" name ="fPw" placeholder="비밀번호" class = "login"><br>
+			<input type="text" name ="fId"  placeholder="아이디" class = "login" required><br>
+			<input type="password" name ="fPw" placeholder="비밀번호" class = "login" required	><br>
 			
 			<br>
 			
