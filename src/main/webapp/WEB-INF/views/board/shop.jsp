@@ -127,19 +127,94 @@
   </div>
 </div>	
 
+<br><br><br><br>	
 
 <!-- shop 공간 -->
 
+<h2 class="section-title">Hot <b>Product</b></h2>
 
+<br><br><br>
 
+<div class = "row">
+                  	<div class="col-md">
+                        <div class="hover-outer-box" style="margin-left: 5px;" data-aos="fade-up" data-aos-delay="0">
+                            <img src="img/pants.jpg" >
+                            <div class="hover-inner-box">
+                                <div class="hover-content">
+                                    <h3>PANTS</h3>
+                                    <p>Modern Pants <br>
+                                       69,000  won</p>
+                                     <br>  <a href = "javascript:alert('준비중입니다..')"><h3>Buy</h3></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                      <div class="col-md">
+                        <div class="hover-outer-box" data-aos="fade-up" data-aos-delay="200">
+                            <img src="img/pants2.jpg">
+                            <div class="hover-inner-box">
+                                <div class="hover-content">
+                                    <h3>PANTS</h3>
+                                    <p>Simple Pants <br>
+                                       59,000  won</p>
+                                       <br>  <a href = "javascript:alert('준비중입니다.')"><h3>Buy</h3></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                
+                      <div class="col-md">
+                        <div class="hover-outer-box" style="width: 475px;" data-aos="fade-up" data-aos-delay="400">
+                            <img src="img/socks.jpg">
+                            <div class="hover-inner-box">
+                                <div class="hover-content">
+                                    <h3>Socks</h3>
+                                    <p>Red&Blue Socks <br>
+                                       29,000  won</p>
+                                       <br>  <a href = "javascript:alert('준비중입니다.')"><h3>Buy</h3></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+</div>
 
+<div class = "row">
 
-
-
+           <div class="col-md" style="position: absolute; width: 550px;height: 400px; top: 1300px;">
+                        <div class="hover-outer-box" style="width: 500px; height: 400px; margin-left: 5px;" data-aos="fade-up" data-aos-delay="500">
+                            <img src="img/jean.jpg" >
+                            <div class="hover-inner-box">
+                                <div class="hover-content">
+                                    <h3>PANTS</h3>
+                                    <p>Woman Jean <br>
+                                       49,000  won</p>
+                                       <br>  <a href = "javascript:alert('준비중입니다.')"><h3>Buy</h3></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>      
+                    
+                    <div class="col-md" style="position: absolute; width: 500px; height: 400px; top: 1360px; left: 1020px;">
+                        <div class="hover-outer-box" data-aos="fade-up" data-aos-delay="700">
+                            <img src="img/belt.jpg" height="400px;" width="600px;">
+                            <div class="hover-inner-box">
+                                <div class="hover-content">
+                                    <h3>BELT</h3>
+                                    <p>Classic Belt <br>
+                                       45,000  won</p>
+                                       <br>  <a href = "javascript:alert('준비중입니다.')"><h3>Buy</h3></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+             
+</div>
 
 <!-- shop 공간 -->
 
+<br><br><br><br><br><br><br><br>	
 
 <footer class="mastfoot my-3">
     <div class="inner container">

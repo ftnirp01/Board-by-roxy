@@ -1,3 +1,4 @@
+<%@page import="com.ftnirp.board.dto.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -81,10 +82,10 @@ bottom: 0
 			<form action="register" method="post" accept-charset="utf-8">
 		
 			<input type="text" name ="fName" placeholder="이름(실명)" class = "login" required><br>
-			<input type="text" name ="fId" placeholder="아이디" class = "login" required><br>
+			<input type="text" name ="fId" placeholder="아이디" class = "login" required>&nbsp; <a href = "idCheck">중복 확인</a><br>
 			<input type="password" name ="fPw" placeholder="비밀번호" class = "login" required><br>
 			<input type="password" name ="fPwCheck" placeholder="비밀번호 확인" class = "login" required><br>
-			<input type="text" name ="email" placeholder="이메일" class = "login" required><br>
+			<input type="text" name ="email" placeholder="이메일" class = "login" required>&nbsp; <a href = "#">중복 확인</a><br>
 			<input type="text" name ="phoneNum" placeholder="휴대폰번호" class = "login" required><br>
 			
 			

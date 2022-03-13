@@ -147,7 +147,7 @@
                         <div class="col-md-4 blog-item-wrapper" data-aos="fade-up">
                             <div class="blog-item">
                                 <div class="blog-img">
-                                    <a href="single.html"><img src="img/nft1.jpg" alt=""></a>
+                                    <a href="javascript:alert('준비중입니다.')"><img src="img/nft1.jpg" alt=""></a>
                                 </div>
                                 <div class="blog-text">
                                     <div class="blog-tag">
@@ -181,7 +181,7 @@
                         <div class="col-md-4 blog-item-wrapper" data-aos="fade-up" data-aos-delay="200">
                             <div class="blog-item">
                                 <div class="blog-img">
-                                    <a href="#"><img src="img/nft2.jpg" alt=""></a>
+                                    <a href="javascript:alert('준비중입니다.')"><img src="img/nft2.jpg" alt=""></a>
                                 </div>
                                 <div class="blog-text">
                                     <div class="blog-tag">
@@ -215,7 +215,7 @@
                         <div class="col-md-4 blog-item-wrapper" data-aos="fade-up" data-aos-delay="400">
                             <div class="blog-item">
                                 <div class="blog-img">
-                                    <a href="#"><img src="img/nft3.jpg" alt=""></a>
+                                    <a href="javascript:alert('준비중입니다.')"><img src="img/nft3.jpg" alt=""></a>
                                 </div>
                                 <div class="blog-text">
                                     <div class="blog-tag">

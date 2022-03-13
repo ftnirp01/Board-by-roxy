@@ -20,6 +20,10 @@ public class MemberService {
 		return mapper.loginCheck(params);
 	}
 	
+	public int idCheck(MemberVO params) {
+		return mapper.idCheck(params);
+	}
+	
 	
 	
 }

@@ -11,4 +11,6 @@ public interface MemberDAO {
 	
 	MemberVO loginCheck(MemberVO params);
 	
+	int idCheck(MemberVO params);
+	
 }
