@@ -109,10 +109,26 @@ public class MemberController {
 		
 	}
 	
-	@GetMapping("/idCheck")
-	public void idCheck(@RequestParam(value = "fId" , required = false)MemberVO params , Model model) {
-		MemberVO member = service.loginCheck(params);
-		model.addAttribute("member" , member);
+	@PostMapping("/idCheck")
+	public void idCheck(MemberVO params , HttpServletResponse response) throws IOException {
+		
+		int idChk = service.idCheck(params);
+		
+		if (idChk == 1) {
+			 response.setContentType("text/html; charset=UTF-8");
+			 PrintWriter writer = response.getWriter();
+	         writer.println("<script type = 'text/javascript'>");
+	         writer.println("alert('사용가능한 아아디 입니다.');");
+	         writer.println("</script>");
+		}else {
+			 response.setContentType("text/html; charset=UTF-8");
+			 PrintWriter writer = response.getWriter();
+	         writer.println("<script type = 'text/javascript'>");
+	         writer.println("alert('아이디가 중복됩니다.');");
+	         writer.println("</script>");
+		}
+		
+		
 	}
 	
 

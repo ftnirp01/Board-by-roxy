@@ -22,9 +22,9 @@
 		fPw = #{fPw}
 	</select>
 	
-	<select id="idCheck" parameterType="com.ftnirp.board.dto.MemberVO" resultType="com.ftnirp.board.dto.MemberVO">
-		select fId from member_r
-		where exists (select fId from member_r where fId = #{fId});
+	<select id="idCheck" resultType="int">
+		select count(*) from member_r 
+		where fId = #{fId};
 	</select>
 
 

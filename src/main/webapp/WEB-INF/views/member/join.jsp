@@ -42,6 +42,36 @@
 <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+		
+<script>
+function getInput() {
+	$.ajax({
+		url:"member/idChk",
+		type:"post",
+		dataType:"json",
+		data: {name: $("#fId").val()}
+	})
+	
+/* 	
+var info = $("#fId").val();
+
+var info2 = $("#email").val();
+
+alert("value_id = " + info);
+
+alert("value_email = " + info2); */
+}
+</script>
+
+
+
+
+
+
+
 
 <style>
 #wrapper{
@@ -57,7 +87,6 @@ bottom: 0
 <body>
 
 		<br>
-		
 		
 		
 			
@@ -82,10 +111,10 @@ bottom: 0
 			<form action="register" method="post" accept-charset="utf-8">
 		
 			<input type="text" name ="fName" placeholder="이름(실명)" class = "login" required><br>
-			<input type="text" name ="fId" placeholder="아이디" class = "login" required>&nbsp; <a href = "idCheck">중복 확인</a><br>
+			<input type="text" name ="fId" placeholder="아이디" id = "fId" class = "login" required>&nbsp; <input type = "button" onclick="getInput();" value = "중복확인" id ="idChk" required="required"><br>
 			<input type="password" name ="fPw" placeholder="비밀번호" class = "login" required><br>
 			<input type="password" name ="fPwCheck" placeholder="비밀번호 확인" class = "login" required><br>
-			<input type="text" name ="email" placeholder="이메일" class = "login" required>&nbsp; <a href = "#">중복 확인</a><br>
+			<input type="text" name ="email" placeholder="이메일" id = "email" class = "login" required>&nbsp; <input type = "button" onclick="getInput();" value = "중복확인" required="required"><br>
 			<input type="text" name ="phoneNum" placeholder="휴대폰번호" class = "login" required><br>
 			
 			
@@ -331,8 +360,8 @@ bottom: 0
 			</div>
 		
 		</div>
-
 		
+	
 		
 
 
