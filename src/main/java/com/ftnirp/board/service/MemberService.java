@@ -24,6 +24,8 @@ public class MemberService {
 		return mapper.idCheck(params);
 	}
 	
-	
+	public int emailCheck(MemberVO params) {
+		return mapper.emailCheck(params);
+	}
 	
 }

@@ -13,4 +13,6 @@ public interface MemberDAO {
 	
 	int idCheck(MemberVO params);
 	
+	int emailCheck(MemberVO params);
+	
 }

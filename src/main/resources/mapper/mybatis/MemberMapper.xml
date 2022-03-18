@@ -24,7 +24,12 @@
 	
 	<select id="idCheck" resultType="int">
 		select count(*) from member_r 
-		where fId = #{fId};
+		where fId = #{fId}
+	</select>
+	
+	<select id="emailCheck" resultType="int">
+		select count(*) from member_r 
+		where email = #{email}
 	</select>
 
 

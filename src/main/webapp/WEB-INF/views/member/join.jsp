@@ -47,23 +47,43 @@
 
 		
 <script>
-function getInput() {
-	$.ajax({
-		url:"member/idChk",
-		type:"post",
-		dataType:"json",
-		data: {name: $("#fId").val()}
-	})
+
+	function id_check() {
+		$.ajax({
+			url : "idChk",
+			type : "post",
+			dataType : "json",
+			data : {
+				"fId" : $("#fId").val()
+			},
+			success : function(data) {
+				if (data == 1) {
+					alert("중복된 아이디입니다.");
+				} else if (data == 0) {
+					alert("사용가능한 아이디입니다.");
+				}
+			}
+		})
+	}
 	
-/* 	
-var info = $("#fId").val();
 
-var info2 = $("#email").val();
-
-alert("value_id = " + info);
-
-alert("value_email = " + info2); */
-}
+	function email_check() {
+		$.ajax({
+			url : "emailChk",
+			type : "post",
+			dataType : "json",
+			data : {
+				"email" : $("#email").val()
+			},
+			success : function(data) {
+				if (data == 1) {
+					alert("중복된 이메일입니다.");
+				} else if (data == 0) {
+					alert("사용가능한 이메일입니다.");
+				}
+			}
+		})
+	}
 </script>
 
 
@@ -111,10 +131,10 @@ bottom: 0
 			<form action="register" method="post" accept-charset="utf-8">
 		
 			<input type="text" name ="fName" placeholder="이름(실명)" class = "login" required><br>
-			<input type="text" name ="fId" placeholder="아이디" id = "fId" class = "login" required>&nbsp; <input type = "button" onclick="getInput();" value = "중복확인" id ="idChk" required="required"><br>
+			<input type="text" name ="fId" placeholder="아이디" id = "fId" class = "login" required>&nbsp; <input type = "button" onclick="id_check();" value = "중복확인" id ="idChk"><br>
 			<input type="password" name ="fPw" placeholder="비밀번호" class = "login" required><br>
 			<input type="password" name ="fPwCheck" placeholder="비밀번호 확인" class = "login" required><br>
-			<input type="text" name ="email" placeholder="이메일" id = "email" class = "login" required>&nbsp; <input type = "button" onclick="getInput();" value = "중복확인" required="required"><br>
+			<input type="text" name ="email" placeholder="이메일" id = "email" class = "login" required>&nbsp; <input type = "button" onclick="email_check();" value = "중복확인" id = "emailChk"><br>
 			<input type="text" name ="phoneNum" placeholder="휴대폰번호" class = "login" required><br>
 			
 			

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ftnirp.board.dto.MemberVO;
@@ -109,27 +110,20 @@ public class MemberController {
 		
 	}
 	
-	@PostMapping("/idCheck")
-	public void idCheck(MemberVO params , HttpServletResponse response) throws IOException {
-		
+	@ResponseBody
+	@PostMapping("/idChk")
+	public int idCheck(MemberVO params) throws Exception {
 		int idChk = service.idCheck(params);
-		
-		if (idChk == 1) {
-			 response.setContentType("text/html; charset=UTF-8");
-			 PrintWriter writer = response.getWriter();
-	         writer.println("<script type = 'text/javascript'>");
-	         writer.println("alert('사용가능한 아아디 입니다.');");
-	         writer.println("</script>");
-		}else {
-			 response.setContentType("text/html; charset=UTF-8");
-			 PrintWriter writer = response.getWriter();
-	         writer.println("<script type = 'text/javascript'>");
-	         writer.println("alert('아이디가 중복됩니다.');");
-	         writer.println("</script>");
-		}
-		
-		
+		return idChk;
 	}
+	
+	@ResponseBody
+	@PostMapping("/emailChk")
+	public int emailCheck(MemberVO params) throws Exception {
+		int emailChk = service.emailCheck(params);
+		return emailChk;
+	}
+	
 	
 
 }
