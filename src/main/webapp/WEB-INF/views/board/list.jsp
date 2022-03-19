@@ -38,7 +38,7 @@
 </head>
 <body data-spy="scroll" data-target="#navbar" class="static-layout">
 
-<%MemberVO vo = (MemberVO)session.getAttribute("res");%>
+	<%MemberVO vo = (MemberVO)session.getAttribute("res");%>
 	<%if (vo == null) { %>
 	
 	<%@include file = "header.jsp" %>
@@ -186,12 +186,21 @@
 	
 	<!-- 글 작성 버튼 -->
 	
+	<%MemberVO vo2 = (MemberVO)session.getAttribute("res");%>
+	
+	<%if(vo2 == null) {%>
+	
 	<div style="position: absolute; left: 160px;">
 		<a class="btn btn-outline-primary btn-lg" href = "write">문의하기</a>
 	</div>
+	
+	<%}else { %>
+	<div style="position: absolute; left: 160px;">
+		<a class="btn btn-outline-primary btn-lg" href="write_login">문의하기</a>
+	</div>
 
-	
-	
+
+	<%} %>
 	
 	<br><br>
 	<hr>

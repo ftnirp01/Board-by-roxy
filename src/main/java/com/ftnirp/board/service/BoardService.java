@@ -27,6 +27,10 @@ public class BoardService {
 		return mapper.insertBoard(params);
 	}
 	
+	public int insertLogin(BoardVO params) {
+		return mapper.insertLogin(params);
+	}
+	
 	public void updateBoard(BoardVO params) {
 		mapper.updateBoard(params);
 	}

@@ -1,3 +1,6 @@
+<%@page import="org.springframework.ui.Model"%>
+<%@page import="com.ftnirp.board.dto.BoardVO"%>
+<%@page import="com.ftnirp.board.dto.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
@@ -38,12 +41,24 @@
 		<textarea rows="20" cols="130" readonly="readonly">${board.b_body }</textarea>
 	</div>
 	
+	<%MemberVO vo = (MemberVO)session.getAttribute("res");%>
+	<!-- session => session -->
 	
-	<div style="position: absolute; left: 220px;">
-		<a class="btn btn-outline-primary btn-lg" href = "modify?userId=${board.userId }">수정하기</a>
-		<button class="btn btn-outline-primary btn-lg" onclick="return confirm('정말로 삭제하시겠습니까?')" type="submit">삭제하기</button>
-	</div>
 	
+	<%BoardVO vo2 = (BoardVO)request.getAttribute("board"); %>	
+	<!-- model => request -->
+	
+	
+	<%if (vo == null) {%>
+	
+		
+		
+   <%}else if(vo.getFId().equals(vo2.getUserFid())){ %>
+ 	  <div style="position: absolute; left: 220px;">
+			<a class="btn btn-outline-primary btn-lg" href = "modify?userId=${board.userId }">수정하기</a>
+			<button class="btn btn-outline-primary btn-lg" onclick="return confirm('정말로 삭제하시겠습니까?')" type="submit">삭제하기</button>
+		</div>
+   <%} %>	
 	</form>
 
 	

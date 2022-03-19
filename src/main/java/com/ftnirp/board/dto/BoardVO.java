@@ -10,5 +10,6 @@ public class BoardVO {
 	private String b_title;
 	private String b_body;
 	private String regDate;
+	private String userFid;
 
 }

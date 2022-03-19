@@ -16,6 +16,8 @@ public interface BoardDAO {
 	
 	int insertBoard(BoardVO params); //글 생성
 	
+	int insertLogin(BoardVO params); //로그인 유저 글생성
+	
 	void updateBoard(BoardVO params); //글 수정
 	
 	void deleteBoard(int userId);

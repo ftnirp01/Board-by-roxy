@@ -8,8 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ftnirp.board.dto.BoardVO;
+import com.ftnirp.board.dto.MemberVO;
 import com.ftnirp.board.service.BoardService;
 
 @Controller
@@ -43,6 +45,26 @@ public class BoardController {
 	public String showCart() {
 		return "board/cart";
 	}
+	
+	@RequestMapping("/write_login")
+	public String showWriteLogin() {
+		return "board/writeLogin";
+	}
+	
+	@PostMapping("/insert_login")
+	public String insertLogin(BoardVO params) {
+		
+		int isInsert = boardService.insertLogin(params);
+		
+		if (isInsert == 0) {
+			System.out.println("게시물 등록 실패");
+		}else {
+			System.out.println("insert(회원) 완료");
+		}
+		
+		return "redirect:/list";
+		
+	}
 
 	//로그인중 --------------------------------------------------------------
 	
@@ -74,7 +96,7 @@ public class BoardController {
 		if (isInsert == 0) {
 			System.out.println("게시물 등록 실패");
 		}else {
-			System.out.println("insert 완료");
+			System.out.println("insert(비회원) 완료");
 		}
 		
 		return "redirect:/list";

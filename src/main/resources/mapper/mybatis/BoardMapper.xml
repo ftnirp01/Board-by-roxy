@@ -17,8 +17,22 @@
 		DEFAULT,
 		#{b_title},
 		#{b_body},
-		sysdate
+		sysdate,
+		DEFAULT
 		)
+	</insert>
+	
+	<insert id="insertLogin" parameterType="com.ftnirp.board.dto.BoardVO">
+		INSERT INTO board_r
+		VALUES (
+		board_seq.nextval,
+		#{userName},
+		#{b_title},
+		#{b_body},
+		sysdate,
+		#{userFid}
+		)
+	
 	</insert>
 	
 	<update id="updateBoard" parameterType="com.ftnirp.board.dto.BoardVO">

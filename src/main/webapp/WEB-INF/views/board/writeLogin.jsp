@@ -1,3 +1,4 @@
+<%@page import="com.ftnirp.board.dto.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -10,14 +11,27 @@
 
 
 	<%@ include file="header.jsp"%>
+	
+	<%MemberVO vo = (MemberVO)session.getAttribute("res"); %>
 
 	<br>
 	<br>
 	<br>
 	<hr>
 	
-	<form action="insert" method="post" accept-charset="utf-8">
-	<input type = "hidden" name = "userFid" id = "userFid" value = "nope">
+	<form action="insert_login" method="post" accept-charset="utf-8">
+	
+	<input type = "hidden" name = "userFid" id = "userFid" value ="<%=vo.getFId() %>">	
+	<strong style="position: absolute; left: 225px;">작성자</strong>
+	
+	<br>
+	
+	<div style="text-align: center;">
+		<input type="text" name = "userName" id = "userName" value = "<%=vo.getFName() %>" readonly="readonly" style="width: 1070px;">
+	</div>
+	
+	<br>
+	
 	<strong style="position: absolute; left: 225px;">제목</strong>
 	
 	<br>
@@ -27,6 +41,7 @@
 	</div>
 	
 	<br>
+	
 
 
 	<strong style="position: absolute; left: 225px;">내용</strong>
