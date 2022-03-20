@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="com.ftnirp.board.dto.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -98,7 +99,26 @@
 <br>
 
 
+
+
+
 <!-- Cart  -->
+
+
+<%
+
+String[] Num = new String[]{"1", "2", "3", "4", "5"}; 
+String[] obName = new String[]{"Modern Pants", "Simple Pants", "Red&Blue Socks", "Woman Jean", "Classic Belt"};
+String[] href = new String[]{"pants", "pants2", "socks", "jean" , "belt"};
+String[] obPig = new String[]{"img/pants.jpg", "img/pants2.jpg", "img/socks.jpg", "img/jean.jpg", "img/belt.jpg"};
+String[] obNum = new String[]{"1"};
+String[] obPoint = new String[]{"5pt"};
+String[] obPrice = new String[]{"69,000", "59,000", "29,000", "49,000", "45,000"};
+String[] obDPrice = new String[]{"free"};
+
+%>
+
+
 
 <h3 class="section-title" style="text-align: left;"><b>Cart</b></h3>
 
@@ -131,16 +151,22 @@
                                 <tbody>
                                </tbody>
                             </table>
-                        </div><!-- .table-fill-prd -->
+                        </div>
                         
-                        <hr>
+<!-- 내용물 시작 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+                        
+                       		<hr>
 
-						<div style="text-align: center;">장바구니에 담긴 상품이 없습니다.</div>
+								<div style="text-align: center;">장바구니에 담긴 상품이 없습니다.</div>
 						
-						<hr>          
-						
+							<hr>
+							 
+					<%for (int i = 0 ; i < 5; i++) { %>
+							          
 							<div style="text-align: center;">
+							
 								<table>
+								
 								 <colgroup>
 		                                    <col width="180" />
 		                                    <col width="200" />
@@ -153,20 +179,22 @@
 		                                </colgroup>	
 								    	<thead>
 		                                    <tr>
-		                                        <th scope="col"><div class="tb-center">1</div></th>
-		                                        <th scope="col"><div class="tb-center">사진</div></th>
-		                                        <th scope="col"><div class="tb-center">modern pants</div></th>
-		                                        <th scope="col"><div class="tb-center">1</div></th>
-		                                        <th scope="col"><div class="tb-center">5pt</div></th>
-		                                        <th scope="col"><div class="tb-center">69,000</div></th>
-		                                        <th scope="col"><div class="tb-center">free</div></th>
-		                                        <th scope="col"><div class="tb-center">취소</div></th>
+		                                        <th scope="col"><div class="tb-center"><%=Num[i] %></div></th>
+		                                        <th scope="col"><div class="tb-center"><img src="<%=obPig[i] %>" style="width: 100px; height: 80px;"></div></th>
+		                                        <th scope="col"><div class="tb-center"><a href = "<%=href[i] %>"><%=obName[i] %></a></div></th>
+		                                        <th scope="col"><div class="tb-center"><%=obNum[0] %></div></th>
+		                                        <th scope="col"><div class="tb-center"><%=obPoint[0]%></div></th>
+		                                        <th scope="col"><div class="tb-center"><%=obPrice[i] %></div></th>
+		                                        <th scope="col"><div class="tb-center"><%=obDPrice[0] %></div></th>
+		                                        <th scope="col"><div class="tb-center"><a href = "#" onclick="return confirm('삭제하시겠습니까?')">cancel</a></div></th>
 		                                    </tr>
 		                               	</thead>
 									</table>
-									<hr>    
+									
+									<hr>
+									    
 								</div>
-						            
+                      <% } %>  
                         
                         <div style="text-align: center;">
                             <a href="javascript:alert('주문이 가능한 금액이 아닙니다.고객센터에 문의 바랍니다.')" class="btn btn-outline-primary btn-lg">주문하기</a>
@@ -175,6 +203,7 @@
                             <a href="javascript:basket_estimate()" class="btn btn-outline-primary btn-lg">견적서 출력</a>
                         </div>
 		<hr>
+<!-- 내용물 끝 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 		
 <!-- Cart-End -->
 
