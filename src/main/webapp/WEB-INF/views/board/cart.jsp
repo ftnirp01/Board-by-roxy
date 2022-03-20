@@ -107,14 +107,14 @@
                         <div style="text-align: center;">
                             <table summary="번호, 사진, 제품명, 수량, 적립, 가격, 배송비, 취소">
                                 <colgroup>
-                                    <col width="180" />
-                                    <col width="195" />
-                                    <col width="*" />
-                                    <col width="220" />
+                                      <col width="180" />
                                     <col width="200" />
-                                    <col width="210" />
-                                    <col width="200" />
-                                    <col width="200" />
+                                    <col width="300" />
+                                    <col width="150" />
+                                    <col width="150" />
+                                    <col width="150" />
+                                    <col width="150" />
+                                    <col width="150" />
                                 </colgroup>
                                 <thead>
                                     <tr>
@@ -136,11 +136,41 @@
                         <hr>
 
 						<div style="text-align: center;">장바구니에 담긴 상품이 없습니다.</div>
-						<hr>                        
+						
+						<hr>          
+						
+							<div style="text-align: center;">
+								<table>
+								 <colgroup>
+		                                    <col width="180" />
+		                                    <col width="200" />
+		                                    <col width="300" />
+		                                    <col width="150" />
+		                                    <col width="150" />
+		                                    <col width="150" />
+		                                    <col width="150" />
+		                                    <col width="150" />
+		                                </colgroup>	
+								    	<thead>
+		                                    <tr>
+		                                        <th scope="col"><div class="tb-center">1</div></th>
+		                                        <th scope="col"><div class="tb-center">사진</div></th>
+		                                        <th scope="col"><div class="tb-center">modern pants</div></th>
+		                                        <th scope="col"><div class="tb-center">1</div></th>
+		                                        <th scope="col"><div class="tb-center">5pt</div></th>
+		                                        <th scope="col"><div class="tb-center">69,000</div></th>
+		                                        <th scope="col"><div class="tb-center">free</div></th>
+		                                        <th scope="col"><div class="tb-center">취소</div></th>
+		                                    </tr>
+		                               	</thead>
+									</table>
+									<hr>    
+								</div>
+						            
                         
                         <div style="text-align: center;">
                             <a href="javascript:alert('주문이 가능한 금액이 아닙니다.고객센터에 문의 바랍니다.')" class="btn btn-outline-primary btn-lg">주문하기</a>
-                            <a href="/shop.html" class="btn btn-outline-primary btn-lg">계속 쇼핑하기</a>
+                            <a href="shop" class="btn btn-outline-primary btn-lg">계속 쇼핑하기</a>
                             <a href="javascript:basket_clear();" class="btn btn-outline-primary btn-lg">장바구니 비우기</a>
                             <a href="javascript:basket_estimate()" class="btn btn-outline-primary btn-lg">견적서 출력</a>
                         </div>

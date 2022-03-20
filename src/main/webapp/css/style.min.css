@@ -194,11 +194,13 @@ section {
   text-transform: capitalize;
    }
 
+
+
 .btn-primary {
   display: inline-block;
   background-color: #ff00cc;
   border-color: #ff00cc;
-  color: black; }
+  color:black; }
   .btn-primary:hover {
     background-color: #333399;
     border-color: #333399;
@@ -212,6 +214,16 @@ section {
   .btn-outline-primary:hover {
     background-color: #fcf3d8;
     border-color: #333399;
+    color: black; }
+    
+.btn-outline-primary-shop {
+  color: white;
+  background-color: #000000;
+  background-image: none;
+  border-color: #333333; }
+  .btn-outline-primary:hover {
+    background-color: #fcf3d8;
+    border-color: #ff8080;
     color: black; }
 
 .btn-shadow {

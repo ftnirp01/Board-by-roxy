@@ -65,6 +65,43 @@ public class BoardController {
 		return "redirect:/list";
 		
 	}
+	
+	
+	// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	
+	@RequestMapping("/pants")
+	public String showPants() {
+		return "board/shop/pants";
+	}
+	
+	@RequestMapping("/pants2")
+	public String showPants2() {
+		return "board/shop/pants2";
+	}
+	
+	@RequestMapping("/socks")
+	public String showSocks() {
+		return "board/shop/socks";
+	}
+	
+	@RequestMapping("/belt")
+	public String showBelt() {
+		return "board/shop/belt";
+	}
+	
+	@RequestMapping("/jean")
+	public String showJean() {
+		return "board/shop/jean";
+	}
+	
+	
+	
+	// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	
+	
+	
+	
+	
 
 	//로그인중 --------------------------------------------------------------
 	

@@ -144,7 +144,7 @@
                                     <h3>PANTS</h3>
                                     <p>Modern Pants <br>
                                        69,000  won</p>
-                                     <br>  <a href = "javascript:alert('준비중입니다..')"><h3>Buy</h3></a>
+                                     <br>  <a href = "pants"><h3>Buy</h3></a>
                                 </div>
                             </div>
                         </div>
@@ -158,7 +158,7 @@
                                     <h3>PANTS</h3>
                                     <p>Simple Pants <br>
                                        59,000  won</p>
-                                       <br>  <a href = "javascript:alert('준비중입니다.')"><h3>Buy</h3></a>
+                                       <br>  <a href = "pants2"><h3>Buy</h3></a>
                                 </div>
                             </div>
                         </div>
@@ -172,7 +172,7 @@
                                     <h3>Socks</h3>
                                     <p>Red&Blue Socks <br>
                                        29,000  won</p>
-                                       <br>  <a href = "javascript:alert('준비중입니다.')"><h3>Buy</h3></a>
+                                       <br>  <a href = "socks"><h3>Buy</h3></a>
                                 </div>
                             </div>
                         </div>
@@ -190,7 +190,7 @@
                                     <h3>PANTS</h3>
                                     <p>Woman Jean <br>
                                        49,000  won</p>
-                                       <br>  <a href = "javascript:alert('준비중입니다.')"><h3>Buy</h3></a>
+                                       <br>  <a href = "jean"><h3>Buy</h3></a>
                                 </div>
                             </div>
                         </div>
@@ -204,7 +204,7 @@
                                     <h3>BELT</h3>
                                     <p>Classic Belt <br>
                                        45,000  won</p>
-                                       <br>  <a href = "javascript:alert('준비중입니다.')"><h3>Buy</h3></a>
+                                       <br>  <a href = "belt"><h3>Buy</h3></a>
                                 </div>
                             </div>
                         </div>
