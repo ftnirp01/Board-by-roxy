@@ -6,6 +6,27 @@
 		select * from board_r order by userId asc
 	</select>
 	
+	<select id="getListPaging" resultType="com.ftnirp.board.dto.BoardVO">
+		
+		 <![CDATA[
+        
+        select * from(
+        
+                select rownum  as rn, userId, b_title, b_body, userName, regdate, userFid
+                  
+                from board_r 
+                
+                where rownum <= #{pageNum} * #{amount}
+                
+                order by rn asc
+                
+                )
+                
+        where rn > (#{pageNum} -1) * #{amount}
+    
+   			 ]]>
+	</select>
+	
 	<select id="listOne" parameterType="Long" resultType="com.ftnirp.board.dto.BoardVO">
 		select * from board_r where userId = #{userId}
 	</select>

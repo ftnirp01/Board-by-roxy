@@ -181,7 +181,10 @@
 	
 	<!-- 페이징 -->
 	<div  style="text-align: center;">
-		<a class = "btn">1</a>
+		<a class = "btn" href = "list?pageNum=1&amount=5">1</a>
+		<a class = "btn" href = "list?pageNum=2&amount=5">2</a>
+		<a class = "btn" href = "list?pageNum=3&amount=5">3</a>
+		<a class = "btn" href = "list?pageNum=4&amount=5">4</a>
 	</div>
 	
 	<!-- 글 작성 버튼 -->

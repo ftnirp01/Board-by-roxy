@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.ftnirp.board.dao.BoardDAO;
 import com.ftnirp.board.dto.BoardVO;
+import com.ftnirp.board.dto.Criteria;
 
 
 @Service
@@ -17,6 +18,10 @@ public class BoardService {
 	
 	public List<BoardVO> getList(){
 		return mapper.getList();
+	}
+	
+	public List<BoardVO> getListPaging(Criteria cri){
+		return mapper.getListPaging(cri);
 	}
 	
 	public BoardVO listOne(Long userId) {

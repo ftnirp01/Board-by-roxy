@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ftnirp.board.dto.BoardVO;
+import com.ftnirp.board.dto.Criteria;
 import com.ftnirp.board.dto.MemberVO;
 import com.ftnirp.board.service.BoardService;
 
@@ -21,10 +22,9 @@ public class BoardController {
 	BoardService boardService;
 	
 	@RequestMapping("/list")
-	public String showList(Model model) {
+	public String showList(Model model , Criteria cri) {
 
-		List<BoardVO> elist = boardService.getList();
-		model.addAttribute("list", elist);
+		model.addAttribute("list" , boardService.getListPaging(cri));
 		
 		return "board/list";
 	}
@@ -67,7 +67,7 @@ public class BoardController {
 	}
 	
 	
-	// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	// 상품 구매 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	
 	@RequestMapping("/pants")
 	public String showPants() {
@@ -96,7 +96,7 @@ public class BoardController {
 	
 	
 	
-	// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	// 끝 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	
 	
 	

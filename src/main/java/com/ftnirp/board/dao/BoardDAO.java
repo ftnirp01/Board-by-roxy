@@ -5,12 +5,15 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.ftnirp.board.dto.BoardVO;
+import com.ftnirp.board.dto.Criteria;
 
 @Mapper
 public interface BoardDAO {
 
 	
 	List<BoardVO> getList(); //전체 조회
+	
+	List<BoardVO> getListPaging(Criteria cri); //페이징 + 조회
 	
 	BoardVO listOne(Long userId); //상세 조회
 	
@@ -20,6 +23,6 @@ public interface BoardDAO {
 	
 	void updateBoard(BoardVO params); //글 수정
 	
-	void deleteBoard(int userId);
+	void deleteBoard(int userId); //글 삭제
 	
 }
