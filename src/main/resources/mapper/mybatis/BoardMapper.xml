@@ -10,21 +10,29 @@
 		
 		 <![CDATA[
         
-        select * from(
+        select * from (
         
-                select rownum  as rn, userId, b_title, b_body, userName, regdate, userFid
-                  
-                from board_r 
+                select rownum as rn, userId, b_title, b_body, userName, regdate, userFid
+                
+                from (
+                
+                select * from board_r
+                
+                order by userId desc
+                
+                ) 
                 
                 where rownum <= #{pageNum} * #{amount}
-                
-                order by rn asc
                 
                 )
                 
         where rn > (#{pageNum} -1) * #{amount}
     
    			 ]]>
+	</select>
+	
+	<select id="pagingNum" parameterType="Integer" resultType="Integer">
+		select count(*) as cnt from board_r
 	</select>
 	
 	<select id="listOne" parameterType="Long" resultType="com.ftnirp.board.dto.BoardVO">

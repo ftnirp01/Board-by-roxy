@@ -24,6 +24,10 @@ public class BoardService {
 		return mapper.getListPaging(cri);
 	}
 	
+	public Integer pagingNum() {
+		return mapper.pagingNum();
+	}
+	
 	public BoardVO listOne(Long userId) {
 		return mapper.listOne(userId);
 	}

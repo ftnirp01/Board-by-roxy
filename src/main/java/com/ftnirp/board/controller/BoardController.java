@@ -1,6 +1,5 @@
 package com.ftnirp.board.controller;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,11 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ftnirp.board.dto.BoardVO;
 import com.ftnirp.board.dto.Criteria;
-import com.ftnirp.board.dto.MemberVO;
 import com.ftnirp.board.service.BoardService;
 
 @Controller
@@ -25,6 +22,8 @@ public class BoardController {
 	public String showList(Model model , Criteria cri) {
 
 		model.addAttribute("list" , boardService.getListPaging(cri));
+		model.addAttribute("cnt" , boardService.pagingNum());
+		
 		
 		return "board/list";
 	}
@@ -62,7 +61,7 @@ public class BoardController {
 			System.out.println("insert(회원) 완료");
 		}
 		
-		return "redirect:/list";
+		return "redirect:/list?pageNum=1&amount=5";
 		
 	}
 	
@@ -136,7 +135,7 @@ public class BoardController {
 			System.out.println("insert(비회원) 완료");
 		}
 		
-		return "redirect:/list";
+		return "redirect:/list?pageNum=1&amount=5";
 	}
 	
 	@RequestMapping("/modify")

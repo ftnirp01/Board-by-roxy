@@ -15,6 +15,8 @@ public interface BoardDAO {
 	
 	List<BoardVO> getListPaging(Criteria cri); //페이징 + 조회
 	
+	Integer pagingNum(); //페이징
+	
 	BoardVO listOne(Long userId); //상세 조회
 	
 	int insertBoard(BoardVO params); //글 생성

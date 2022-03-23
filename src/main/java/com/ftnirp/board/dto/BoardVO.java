@@ -11,5 +11,6 @@ public class BoardVO {
 	private String b_body;
 	private String regDate;
 	private String userFid;
+	private Integer cnt;
 
 }

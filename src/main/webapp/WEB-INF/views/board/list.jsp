@@ -1,3 +1,5 @@
+<%@page import="java.util.List"%>
+<%@page import="com.ftnirp.board.dto.BoardVO"%>
 <%@page import="com.ftnirp.board.dto.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -180,13 +182,51 @@
 	
 	
 	<!-- 페이징 -->
+	<%
+	
+	Integer cnt = (Integer)request.getAttribute("cnt");
+	int amount = 5;
+	
+	double result = (double)cnt/amount; //4.2
+	int realCnt = (int) Math.ceil(result); //5
+
+	boolean exitLoop = false;	
+	
+	
+	// 페이지 개수 = 6 // 12345 띄움 6페이징만 필요함 
+	%>
+	
+	
+	
+	
 	<div  style="text-align: center;">
-		<a class = "btn" href = "list?pageNum=1&amount=5">1</a>
-		<a class = "btn" href = "list?pageNum=2&amount=5">2</a>
-		<a class = "btn" href = "list?pageNum=3&amount=5">3</a>
-		<a class = "btn" href = "list?pageNum=4&amount=5">4</a>
+		<%
+		Loop:
+		for(int j=0; j<5; j++) { 
+		
+		%>
+				<%if (j==0){ %>
+					<a class = "btn" href = "list?pageNum=1&amount=5"> < </a>
+				<%}else{ %>
+					<a class = "btn" href = "list?pageNum=<%=j*5 %>&amount=5"> < </a>			
+				<%}%>
+			<%
+				for (int i=1+j*5; i<=5+j*5; i++) { 
+			%>
+					<a class = "btn" href = "list?pageNum=<%=i %>&amount=5"><%=i %></a>
+					<%
+					if (i%5==0) {
+					break Loop;
+					}
+					%>
+				<%} %>
+					<a class = "btn" href = "list?pageNum=<%=j*5+6%>&amount=5"> > </a>
+			<%
+			} 
+			%>
 	</div>
 	
+		
 	<!-- 글 작성 버튼 -->
 	
 	<%MemberVO vo2 = (MemberVO)session.getAttribute("res");%>
@@ -201,8 +241,6 @@
 	<div style="position: absolute; left: 160px;">
 		<a class="btn btn-outline-primary btn-lg" href="write_login">문의하기</a>
 	</div>
-
-
 	<%} %>
 	
 	<br><br>

@@ -59,7 +59,7 @@
 					<li class="nav-item">
 							<a class="nav-link" href="loginSuccess" >Home</a></li>
 					<li class="nav-item">
-							<a class="nav-link" href="list" >Board</a>
+							<a class="nav-link" href="list?pageNum=1&amount=5" >Board</a>
 					</li>
 					<li class="nav-item">
 							<a class="nav-link" href="shop" >Shop</a>
