@@ -6,7 +6,7 @@ view , controller , dao , mapper.xml , service는 100% 제가 제작하였습니
 
 # 기능
 
-1. Shop / 미완성 <br>
+1. Shop / <br>
 Shop의 기능은 패션 상품을 팔기위한 UI 제공 (상품의 사진 , 가격 , 수량 등)
 (상품의 사진 , 가격은 제가 임의로 정한 가상의 상품입니다.)
 (상품의 사진(Nft 상품의 사진 포함)은 pixabay에서 다운로드 한 무료 파일들입니다.)
