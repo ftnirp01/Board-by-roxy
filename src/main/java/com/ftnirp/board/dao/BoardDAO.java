@@ -15,7 +15,7 @@ public interface BoardDAO {
 	
 	List<BoardVO> getListPaging(Criteria cri); //페이징 + 조회
 	
-	Integer pagingNum(); //페이징
+	Integer pagingNum(); //게시물 개수 확인
 	
 	BoardVO listOne(Long userId); //상세 조회
 	

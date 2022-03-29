@@ -60,7 +60,8 @@
 		</div>
    <%} %>	
 	</form>
-
+	
+	<a style="position: absolute; right: 220px;" href = "javascript:history.back();">뒤로가기</a>
 	
 	<br>
 	<br>

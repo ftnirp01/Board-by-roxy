@@ -52,7 +52,6 @@ public class MemberController {
 		if (isRegister == 0) {
 			System.out.println("회원가입 실패");
 		}else {
-			 System.out.println("alert 띄움");
 			 response.setContentType("text/html; charset=UTF-8");
 			 PrintWriter writer = response.getWriter();
 	         writer.println("<script type = 'text/javascript'>");

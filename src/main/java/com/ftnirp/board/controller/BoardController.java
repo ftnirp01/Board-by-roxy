@@ -1,6 +1,12 @@
 package com.ftnirp.board.controller;
 
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,11 +25,25 @@ public class BoardController {
 	BoardService boardService;
 	
 	@RequestMapping("/list")
-	public String showList(Model model , Criteria cri) {
+	public String showList(Model model , Criteria cri 
+							,@RequestParam(value = "pageNum" , required = false)String pageNum
+							,@RequestParam(value = "cntPerPage" , required = false)String cntPerPage) {
 
-		model.addAttribute("list" , boardService.getListPaging(cri));
-		model.addAttribute("cnt" , boardService.pagingNum());
+		int total = boardService.pagingNum();
 		
+		if (pageNum == null && cntPerPage == null) {
+			pageNum = "1";
+			cntPerPage = "5";
+		}else if (pageNum == null) {
+			pageNum = "1";
+		}else if (cntPerPage == null) {
+			cntPerPage = "5";
+		}
+		
+		cri = new Criteria(total , Integer.parseInt(pageNum) , Integer.parseInt(cntPerPage));
+		System.out.println(cri.getCntPerPage());
+		model.addAttribute("paging" , cri);
+		model.addAttribute("list" , boardService.getListPaging(cri));
 		
 		return "board/list";
 	}
@@ -61,7 +81,7 @@ public class BoardController {
 			System.out.println("insert(회원) 완료");
 		}
 		
-		return "redirect:/list?pageNum=1&amount=5";
+		return "redirect:/list";
 		
 	}
 	
@@ -125,7 +145,7 @@ public class BoardController {
 	}
 	
 	@PostMapping("/insert")
-	public String insert(BoardVO params) {
+	public void insert(BoardVO params , HttpServletResponse response) throws IOException {
 		
 		int isInsert = boardService.insertBoard(params);
 		
@@ -135,7 +155,14 @@ public class BoardController {
 			System.out.println("insert(비회원) 완료");
 		}
 		
-		return "redirect:/list?pageNum=1&amount=5";
+		 response.setContentType("text/html; charset=UTF-8");
+		 PrintWriter writer = response.getWriter();
+         writer.println("<script type = 'text/javascript'>");
+         writer.println("alert('등록되었습니다.');");
+         writer.println("location.href='list';");
+         writer.println("</script>");
+	
+		
 	}
 	
 	@RequestMapping("/modify")
@@ -155,10 +182,13 @@ public class BoardController {
 		return "board/b_bodyModify";
 	}
 	
+	
 	@PostMapping("/modify")
-	public String updateBoard(BoardVO params) {
+	public String updateBoard(BoardVO params ){
+		
 		boardService.updateBoard(params);
 		return "redirect:/list";
+		
 	}
 	
 	@PostMapping("/delete")

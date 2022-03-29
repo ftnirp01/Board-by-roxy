@@ -35,7 +35,18 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js">
+    
+    
+    
+    </script>
+    
+    <script>
+	function selChange() {
+		var sel = document.getElementById('cntPerPage').value;
+		location.href="list?pageNum=${paging.pageNum}&cntPerPage="+sel;
+	}
+	</script>
 
 </head>
 <body data-spy="scroll" data-target="#navbar" class="static-layout">
@@ -136,9 +147,22 @@
 	<div style="text-align: center;">
 		<h1>문의사항</h1>
 	</div>
-	<br><br>
 	
-	<hr>
+	<div style="position: absolute; right: 10px;">
+		<select id ="cntPerPage" name="sel" onchange="selChange()">
+			<option value="5" <c:if test="${paging.cntPerPage == 5}">selected</c:if>>5줄 보기</option>
+			<option value="10" <c:if test="${paging.cntPerPage == 10}">selected</c:if>>10줄 보기</option>
+			<option value="15"<c:if test="${paging.cntPerPage == 15}">selected</c:if>>15줄 보기</option>
+		</select>
+	</div>
+	
+	 <!-- 옵션선택 끝 -->
+	
+	<br>
+	
+		<hr>
+	
+	
 	
 	<div class = "row text-center">
 		<div class = "col-md-3">
@@ -155,11 +179,13 @@
 		</div>
 	</div>
 	
+	
+	
+
+	
 	<hr>	
 	
 	<c:forEach items="${list}" var="board">
-	
-	
 	
 	<div class = "row text-center mt-4">
 		<div class = "col-md-3">
@@ -180,51 +206,37 @@
 	
 	</c:forEach>
 	
-	
 	<!-- 페이징 -->
-	<%
-	
-	Integer cnt = (Integer)request.getAttribute("cnt");
-	int amount = 5;
-	
-	double result = (double)cnt/amount; //4.2
-	int realCnt = (int) Math.ceil(result); //5
-
-	boolean exitLoop = false;	
 	
 	
-	// 페이지 개수 = 6 // 12345 띄움 6페이징만 필요함 
-	%>
-	
-	
-	
-	
-	<div  style="text-align: center;">
-		<%
-		Loop:
-		for(int j=0; j<5; j++) { 
+	<div style="text-align: center;">
+		<c:if test="${paging.startPage != 1 }">
+			<a href="/list?pageNum=1&cntPerPage=${paging.cntPerPage}"> &lt;&lt; </a>&nbsp;
+		</c:if>
+		<c:if test="${paging.startPage != 1 }">
+			<a href="/list?pageNum=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}"> &lt; </a>
+		</c:if>
+		<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
+			<c:choose>
+				<c:when test="${p == paging.pageNum }">
+					<b>${p}</b>
+				</c:when>
+				<c:when test="${p != paging.pageNum }">
+					<a href="/list?pageNum=${p}&cntPerPage=${paging.cntPerPage}"> ${p} </a>
+				</c:when>
+			</c:choose>
+		</c:forEach>
+		<c:if test="${paging.endPage != paging.lastPage}">
+			<a href="/list?pageNum=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}"> &gt; </a>
+		</c:if>
+		&nbsp;
+		<c:if test="${paging.endPage != paging.lastPage}">
+			<a href="/list?pageNum=${paging.lastPage }&cntPerPage=${paging.cntPerPage}"> &gt;&gt; </a>
+		</c:if>
 		
-		%>
-				<%if (j==0){ %>
-					<a class = "btn" href = "list?pageNum=1&amount=5"> < </a>
-				<%}else{ %>
-					<a class = "btn" href = "list?pageNum=<%=j*5 %>&amount=5"> < </a>			
-				<%}%>
-			<%
-				for (int i=1+j*5; i<=5+j*5; i++) { 
-			%>
-					<a class = "btn" href = "list?pageNum=<%=i %>&amount=5"><%=i %></a>
-					<%
-					if (i%5==0) {
-					break Loop;
-					}
-					%>
-				<%} %>
-					<a class = "btn" href = "list?pageNum=<%=j*5+6%>&amount=5"> > </a>
-			<%
-			} 
-			%>
 	</div>
+	
+	<!-- 페이징 끝 -->
 	
 		
 	<!-- 글 작성 버튼 -->

@@ -7,10 +7,10 @@
 	</select>
 	
 	<select id="getListPaging" resultType="com.ftnirp.board.dto.BoardVO">
-		
+	
 		 <![CDATA[
         
-        select * from (
+        	select * from (
         
                 select rownum as rn, userId, b_title, b_body, userName, regdate, userFid
                 
@@ -20,19 +20,19 @@
                 
                 order by userId desc
                 
-                ) 
-                
-                where rownum <= #{pageNum} * #{amount}
-                
+	                ) A 
                 )
                 
-        where rn > (#{pageNum} -1) * #{amount}
+      		 WHERE RN BETWEEN #{start} AND #{end}
     
    			 ]]>
+   			 
+	
+		
 	</select>
 	
 	<select id="pagingNum" parameterType="Integer" resultType="Integer">
-		select count(*) as cnt from board_r
+		select count(*) from board_r
 	</select>
 	
 	<select id="listOne" parameterType="Long" resultType="com.ftnirp.board.dto.BoardVO">

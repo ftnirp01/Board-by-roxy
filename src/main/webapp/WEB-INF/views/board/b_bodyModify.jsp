@@ -7,8 +7,7 @@
 <meta charset="EUC-KR">
 <title>F.com</title>
 </head>
-<body>
-
+<body style="background-color: pink;">
 
 	<%@ include file="header.jsp"%>
 
@@ -18,6 +17,8 @@
 	<hr>
 	
 	<!-- update form action에 userId 포함 시켜야 정상적으로 update가 된다 -->
+	
+	
 	
 	<form action="modify?userId=${board.userId }" method="post" accept-charset="utf-8">
 	
@@ -51,6 +52,8 @@
 	</div>
 	
 	</form>
+	
+	<a style="position: absolute; right: 220px;" href = "javascript:history.back();">뒤로가기</a>
 	
 	<br>
 	<br>
