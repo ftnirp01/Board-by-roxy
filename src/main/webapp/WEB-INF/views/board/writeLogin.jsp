@@ -7,6 +7,30 @@
 <meta charset="EUC-KR">
 <title>F.com</title>
 </head>
+
+
+<script type="text/javascript">
+function back() {
+history.back();	
+}
+
+function formSubmit() {
+	
+	var title = document.getElementById("b_title").value;
+	var body = document.getElementById("b_body").value;
+	
+	if (title == false){
+		alert("제목을 입력하세요.");
+	}else if(body == false) {
+		alert("내용을 입력하세요.");
+	}else if (title != false & body !=false){
+		document.getElementById("form").submit();
+		alert("등록되었습니다.");
+	}
+}
+	
+
+</script>
 <body>
 
 
@@ -19,9 +43,10 @@
 	<br>
 	<hr>
 	
-	<form action="insert_login" method="post" accept-charset="utf-8">
+	<form id ="form" action="insert_login" method="post" accept-charset="utf-8">
 	
 	<input type = "hidden" name = "userFid" id = "userFid" value ="<%=vo.getFId() %>">	
+	
 	<strong style="position: absolute; left: 225px;">작성자</strong>
 	
 	<br>
@@ -37,7 +62,7 @@
 	<br>
 	
 	<div style="text-align: center;">
-		<input type="text" name = "b_title" id = "b_title" style="width: 1070px;">
+		<input type="text" name = "b_title" id = "b_title" style="width: 1070px;" required>
 	</div>
 	
 	<br>
@@ -49,12 +74,11 @@
 	<br>
 
 	<div style="text-align: center;">
-		<textarea name = "b_body" id = "b_body" rows="20" cols="130" ></textarea>
+		<textarea name = "b_body" id = "b_body" rows="20" cols="130" required></textarea>
 	</div>
-
 	<div style="position: absolute; left: 1155px;">
-		<button class = "btn btn-outline-primary btn-lg" type="submit">저장</button>
-		<button class = "btn btn-outline-primary btn-lg" type="reset">취소</button>
+		<a href = "#" onclick="formSubmit(); return false;">등록하기</a>/
+		<a href = "#" onclick="back(); return false;">목록으로</a>
 	</div>
 	
 	</form>

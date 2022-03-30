@@ -1,3 +1,4 @@
+<%@page import="com.ftnirp.board.dto.CartVO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.ftnirp.board.dto.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -160,9 +161,6 @@ String[] obDPrice = new String[]{"free"};
 								<div style="text-align: center;">장바구니에 담긴 상품이 없습니다.</div>
 						
 							<hr>
-							 
-					<%for (int i = 0 ; i < 5; i++) { %>
-							          
 							<div style="text-align: center;">
 							
 								<table>
@@ -179,13 +177,13 @@ String[] obDPrice = new String[]{"free"};
 		                                </colgroup>	
 								    	<thead>
 		                                    <tr>
-		                                        <th scope="col"><div class="tb-center"><%=Num[i] %></div></th>
-		                                        <th scope="col"><div class="tb-center"><img src="<%=obPig[i] %>" style="width: 100px; height: 80px;"></div></th>
-		                                        <th scope="col"><div class="tb-center"><a href = "<%=href[i] %>"><%=obName[i] %></a></div></th>
-		                                        <th scope="col"><div class="tb-center"><%=obNum[0] %></div></th>
-		                                        <th scope="col"><div class="tb-center"><%=obPoint[0]%></div></th>
-		                                        <th scope="col"><div class="tb-center"><%=obPrice[i] %></div></th>
-		                                        <th scope="col"><div class="tb-center"><%=obDPrice[0] %></div></th>
+		                                        <th scope="col"><div class="tb-center">${cart.cartNum }</div></th>
+		                                        <th scope="col"><div class="tb-center"><img src="${cart.cartPic }" style="width: 100px; height: 80px;"></div></th>
+		                                        <th scope="col"><div class="tb-center"><a href = "${cart.href }">${cart.cartName }</a></div></th>
+		                                        <th scope="col"><div class="tb-center">${cart.cartQun }</div></th>
+		                                        <th scope="col"><div class="tb-center">${cart.point }</div></th>
+		                                        <th scope="col"><div class="tb-center">${cart.cartPrice }</div></th>
+		                                        <th scope="col"><div class="tb-center">${cart.delPrice }</div></th>
 		                                        <th scope="col"><div class="tb-center"><a href = "#" onclick="return confirm('삭제하시겠습니까?')">cancel</a></div></th>
 		                                    </tr>
 		                               	</thead>
@@ -194,7 +192,7 @@ String[] obDPrice = new String[]{"free"};
 									<hr>
 									    
 								</div>
-                      <% } %>  
+								
                         
                         <div style="text-align: center;">
                             <a href="javascript:alert('주문이 가능한 금액이 아닙니다.고객센터에 문의 바랍니다.')" class="btn btn-outline-primary btn-lg">주문하기</a>

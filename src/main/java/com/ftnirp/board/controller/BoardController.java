@@ -1,11 +1,7 @@
 package com.ftnirp.board.controller;
 
 
-import java.io.IOException;
-import java.io.PrintWriter;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ftnirp.board.dto.BoardVO;
+import com.ftnirp.board.dto.CartVO;
 import com.ftnirp.board.dto.Criteria;
 import com.ftnirp.board.service.BoardService;
 
@@ -41,7 +38,6 @@ public class BoardController {
 		}
 		
 		cri = new Criteria(total , Integer.parseInt(pageNum) , Integer.parseInt(cntPerPage));
-		System.out.println(cri.getCntPerPage());
 		model.addAttribute("paging" , cri);
 		model.addAttribute("list" , boardService.getListPaging(cri));
 		
@@ -61,7 +57,8 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/cart")
-	public String showCart() {
+	public String showCart(Model model) {
+		model.addAttribute("cart" , new CartVO());
 		return "board/cart";
 	}
 	
@@ -89,8 +86,18 @@ public class BoardController {
 	// 상품 구매 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	
 	@RequestMapping("/pants")
-	public String showPants() {
+	public String showPants(Model model) {
+		
+		model.addAttribute("cart", new CartVO());
 		return "board/shop/pants";
+	}
+	
+	@PostMapping("/pants")
+	public String cartPants(Model model , CartVO cartVO) {
+		
+		model.addAttribute("cart" , cartVO);
+		System.out.println(cartVO.getCartName());
+		return "redirect:/cart";
 	}
 	
 	@RequestMapping("/pants2")
@@ -145,7 +152,7 @@ public class BoardController {
 	}
 	
 	@PostMapping("/insert")
-	public void insert(BoardVO params , HttpServletResponse response) throws IOException {
+	public String insert(BoardVO params )  {
 		
 		int isInsert = boardService.insertBoard(params);
 		
@@ -155,13 +162,7 @@ public class BoardController {
 			System.out.println("insert(비회원) 완료");
 		}
 		
-		 response.setContentType("text/html; charset=UTF-8");
-		 PrintWriter writer = response.getWriter();
-         writer.println("<script type = 'text/javascript'>");
-         writer.println("alert('등록되었습니다.');");
-         writer.println("location.href='list';");
-         writer.println("</script>");
-	
+		return "redirect:/list";
 		
 	}
 	

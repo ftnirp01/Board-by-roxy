@@ -49,6 +49,9 @@
 <script>
 
 	function id_check() {
+		
+		var fId1 = document.getElementById("fId").value;
+		
 		$.ajax({
 			url : "idChk",
 			type : "post",
@@ -57,9 +60,11 @@
 				"fId" : $("#fId").val()
 			},
 			success : function(data) {
-				if (data == 1) {
+				if (fId1 == false) {
+					alert("아이디를 입력하세요.");
+				} else if (data == 1) {
 					alert("중복된 아이디입니다.");
-				} else if (data == 0) {
+				}else if(data == 0) {
 					alert("사용가능한 아이디입니다.");
 				}
 			}
@@ -68,6 +73,9 @@
 	
 
 	function email_check() {
+		
+		var email1 = document.getElementById("email").value;
+		
 		$.ajax({
 			url : "emailChk",
 			type : "post",
@@ -76,13 +84,29 @@
 				"email" : $("#email").val()
 			},
 			success : function(data) {
-				if (data == 1) {
+				if (email1 == false) {
+					alert("이메일을 입력하세요.");
+				} else if (data == 1) {
 					alert("중복된 이메일입니다.");
-				} else if (data == 0) {
+				}else if(data == 0) {
 					alert("사용가능한 이메일입니다.");
 				}
 			}
 		})
+	}
+	
+	function pw_check() {
+		
+		var pw1 = document.getElementById("fPw").value;
+		var pw2 = document.getElementById("fPwCheck").value;
+		
+		if (pw1 != pw2){
+			alert("비밀번호가 일치하지 않습니다.");
+		}else{
+			alert("비밀번호 일치");
+		}
+		
+		
 	}
 </script>
 
@@ -132,8 +156,8 @@ bottom: 0
 		
 			<input type="text" name ="fName" placeholder="이름(실명)" class = "login" required><br>
 			<input type="text" name ="fId" placeholder="아이디" id = "fId" class = "login" required>&nbsp; <input type = "button" onclick="id_check();" value = "중복확인" id ="idChk"><br>
-			<input type="password" name ="fPw" placeholder="비밀번호" class = "login" required><br>
-			<input type="password" name ="fPwCheck" placeholder="비밀번호 확인" class = "login" required><br>
+			<input type="password" name ="fPw" id ="fPw" placeholder="비밀번호" class = "login" required><br>
+			<input type="password" name ="fPwCheck" id ="fPwCheck" placeholder="비밀번호 확인" class = "login" required> &nbsp; <input type = "button" onclick="pw_check();" value = "비밀번호 확인" id = ""><br>
 			<input type="text" name ="email" placeholder="이메일" id = "email" class = "login" required>&nbsp; <input type = "button" onclick="email_check();" value = "중복확인" id = "emailChk"><br>
 			<input type="text" name ="phoneNum" placeholder="휴대폰번호" class = "login" required><br>
 			
