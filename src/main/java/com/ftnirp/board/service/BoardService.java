@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.ftnirp.board.dao.BoardDAO;
 import com.ftnirp.board.dto.BoardVO;
+import com.ftnirp.board.dto.CartVO;
 import com.ftnirp.board.dto.Criteria;
 
 
@@ -48,6 +49,13 @@ public class BoardService {
 		mapper.deleteBoard(userId);
 	}
 	
+	public int pantsCart(CartVO cartVO) {
+		return mapper.pantsCart(cartVO);
+	}
+	
+	public List<CartVO> cartList() {
+		return mapper.cartList();
+	}
 	
 	
 }

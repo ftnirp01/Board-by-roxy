@@ -58,7 +58,7 @@ public class BoardController {
 	
 	@RequestMapping("/cart")
 	public String showCart(Model model) {
-		model.addAttribute("cart" , new CartVO());
+		model.addAttribute("cart" , boardService.cartList());
 		return "board/cart";
 	}
 	
@@ -86,9 +86,13 @@ public class BoardController {
 	// 상품 구매 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	
 	@RequestMapping("/pants")
-	public String showPants(Model model) {
+	public String showPants(CartVO cartvo) {
 		
-		model.addAttribute("cart", new CartVO());
+		int isInsert = boardService.pantsCart(cartvo);
+		if (isInsert == 0) {
+			System.out.println("장바구니 넣기 실패");
+		}else {
+		}
 		return "board/shop/pants";
 	}
 	

@@ -156,15 +156,16 @@ String[] obDPrice = new String[]{"free"};
                         
 <!-- 내용물 시작 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
                         
-                       		<hr>
+							<!--<hr>
 
 								<div style="text-align: center;">장바구니에 담긴 상품이 없습니다.</div>
 						
 							<hr>
+							 -->
+							 <hr>
+							<c:forEach items="${cart}" var = "cart">
 							<div style="text-align: center;">
-							
 								<table>
-								
 								 <colgroup>
 		                                    <col width="180" />
 		                                    <col width="200" />
@@ -177,7 +178,7 @@ String[] obDPrice = new String[]{"free"};
 		                                </colgroup>	
 								    	<thead>
 		                                    <tr>
-		                                        <th scope="col"><div class="tb-center">${cart.cartNum }</div></th>
+		                                        <th scope="col"><div class="tb-center">${cart.cartNum}</div></th>
 		                                        <th scope="col"><div class="tb-center"><img src="${cart.cartPic }" style="width: 100px; height: 80px;"></div></th>
 		                                        <th scope="col"><div class="tb-center"><a href = "${cart.href }">${cart.cartName }</a></div></th>
 		                                        <th scope="col"><div class="tb-center">${cart.cartQun }</div></th>
@@ -192,7 +193,7 @@ String[] obDPrice = new String[]{"free"};
 									<hr>
 									    
 								</div>
-								
+								</c:forEach>
                         
                         <div style="text-align: center;">
                             <a href="javascript:alert('주문이 가능한 금액이 아닙니다.고객센터에 문의 바랍니다.')" class="btn btn-outline-primary btn-lg">주문하기</a>

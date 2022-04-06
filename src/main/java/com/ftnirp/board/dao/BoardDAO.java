@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.ftnirp.board.dto.BoardVO;
+import com.ftnirp.board.dto.CartVO;
 import com.ftnirp.board.dto.Criteria;
 
 @Mapper
@@ -26,5 +27,9 @@ public interface BoardDAO {
 	void updateBoard(BoardVO params); //글 수정
 	
 	void deleteBoard(int userId); //글 삭제
+	
+	int pantsCart(CartVO cartVO); //pants 장바구니에 추가
+	
+	List<CartVO> cartList(); //장바구니 조회
 	
 }

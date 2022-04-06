@@ -76,6 +76,25 @@
 		DELETE board_r
 		WHERE userId = #{userId}
 	</delete>
+	
+	
+	<insert id="pantsCart" parameterType="com.ftnirp.board.dto.CartVO">
+		INSERT into cart_r
+		VALUES (
+		1,
+		'img/pants.jpg',
+		'Modern Pants' ,
+		1,
+		5,
+		'free',
+		'69,000',
+		'pants'
+		)
+	</insert>
+	
+	<select id="cartList" resultType="com.ftnirp.board.dto.CartVO">
+		select * from cart_r order by cartNum asc
+	</select>
 
 
 

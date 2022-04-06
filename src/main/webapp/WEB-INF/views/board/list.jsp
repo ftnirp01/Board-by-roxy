@@ -1,3 +1,4 @@
+<%@page import="com.ftnirp.board.dto.Criteria"%>
 <%@page import="java.util.List"%>
 <%@page import="com.ftnirp.board.dto.BoardVO"%>
 <%@page import="com.ftnirp.board.dto.MemberVO"%>
