@@ -1,8 +1,5 @@
 package com.ftnirp.board.controller;
 
-
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -58,7 +55,10 @@ public class BoardController {
 	
 	@RequestMapping("/cart")
 	public String showCart(Model model) {
+		
+		
 		model.addAttribute("cart" , boardService.cartList());
+		
 		return "board/cart";
 	}
 	
@@ -87,20 +87,17 @@ public class BoardController {
 	
 	@RequestMapping("/pants")
 	public String showPants(CartVO cartvo) {
-		
-		int isInsert = boardService.pantsCart(cartvo);
-		if (isInsert == 0) {
-			System.out.println("장바구니 넣기 실패");
-		}else {
-		}
 		return "board/shop/pants";
 	}
 	
 	@PostMapping("/pants")
-	public String cartPants(Model model , CartVO cartVO) {
-		
-		model.addAttribute("cart" , cartVO);
-		System.out.println(cartVO.getCartName());
+	public String cartPants(CartVO cartVO) {
+		int isInsert = boardService.pantsCart(cartVO);
+		if (isInsert == 0) {
+			System.out.println("장바구니 넣기 실패");
+		}else {
+			System.out.println("장바구니에 넣음 (pants)");
+		}
 		return "redirect:/cart";
 	}
 	
@@ -109,19 +106,72 @@ public class BoardController {
 		return "board/shop/pants2";
 	}
 	
+	@PostMapping("/pants2")
+	public String cartPants2(CartVO cartVO) {
+		int isInsert = boardService.pants2Cart(cartVO);
+		if (isInsert == 0) {
+			System.out.println("장바구니 넣기 실패");
+		}else {
+			System.out.println("장바구니에 넣음 (pants2)");
+		}
+		return "redirect:/cart";
+	}
+	
 	@RequestMapping("/socks")
 	public String showSocks() {
 		return "board/shop/socks";
 	}
+	
+	@PostMapping("/socks")
+	public String cartSocks(CartVO cartVO) {
+		int isInsert = boardService.socksCart(cartVO);
+		if (isInsert == 0) {
+			System.out.println("장바구니 넣기 실패");
+		}else {
+			System.out.println("장바구니에 넣음 (socks)");
+		}
+		return "redirect:/cart";
+	}
+	
 	
 	@RequestMapping("/belt")
 	public String showBelt() {
 		return "board/shop/belt";
 	}
 	
+	@PostMapping("/belt")
+	public String cartBelt(CartVO cartVO) {
+		int isInsert = boardService.beltCart(cartVO);
+		if (isInsert == 0) {
+			System.out.println("장바구니 넣기 실패");
+		}else {
+			System.out.println("장바구니에 넣음 (belt)");
+		}
+		return "redirect:/cart";
+	}
+	
 	@RequestMapping("/jean")
 	public String showJean() {
 		return "board/shop/jean";
+	}
+	
+	@PostMapping("/jean")
+	public String cartJean(CartVO cartVO) {
+		int isInsert = boardService.jeanCart(cartVO);
+		if (isInsert == 0) {
+			System.out.println("장바구니 넣기 실패");
+		}else {
+			System.out.println("장바구니에 넣음 (jean)");
+		}
+		return "redirect:/cart";
+	}
+	
+	
+	@PostMapping("/deleteCart")
+	public String deleteCart(int cartNum) {
+		System.out.println("cartNum = " + cartNum);
+		boardService.deleteCart(cartNum);
+		return "redirect:/cart";
 	}
 	
 	
@@ -156,7 +206,7 @@ public class BoardController {
 	}
 	
 	@PostMapping("/insert")
-	public String insert(BoardVO params )  {
+	public String insert(BoardVO params)  {
 		
 		int isInsert = boardService.insertBoard(params);
 		

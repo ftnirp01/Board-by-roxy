@@ -53,6 +53,27 @@ public class BoardService {
 		return mapper.pantsCart(cartVO);
 	}
 	
+	public int pants2Cart(CartVO cartVO) {
+		return mapper.pants2Cart(cartVO);
+	}
+	
+	public int beltCart(CartVO cartVO) {
+		return mapper.beltCart(cartVO);
+	}
+	
+	public int jeanCart(CartVO cartVO) {
+		return mapper.jeanCart(cartVO);
+	}
+	
+	
+	public int socksCart(CartVO cartVO) {
+		return mapper.socksCart(cartVO);
+	}
+	
+	public void deleteCart(int cartNum) {
+		mapper.deleteCart(cartNum);
+	}
+	
 	public List<CartVO> cartList() {
 		return mapper.cartList();
 	}

@@ -92,16 +92,78 @@
 		)
 	</insert>
 	
+	<insert id="pants2Cart" parameterType="com.ftnirp.board.dto.CartVO">
+		INSERT into cart_r
+		VALUES (
+		2,
+		'img/pants2.jpg',
+		'Simple Pants' ,
+		1,
+		5,
+		'free',
+		'59,000',
+		'pants2'
+		)
+	</insert>
+	
+	<insert id="jeanCart" parameterType="com.ftnirp.board.dto.CartVO">
+		INSERT into cart_r
+		VALUES (
+		3,
+		'img/jean.jpg',
+		'Woman Jean' ,
+		1,
+		5,
+		'free',
+		'49,000',
+		'jean'
+		)
+	</insert>
+	
+	
+	<insert id="beltCart" parameterType="com.ftnirp.board.dto.CartVO">
+		INSERT into cart_r
+		VALUES (
+		4,
+		'img/belt.jpg',
+		'Classic Belt' ,
+		1,
+		5,
+		'free',
+		'45,000',
+		'belt'
+		)
+	</insert>
+	
+	<insert id="socksCart" parameterType="com.ftnirp.board.dto.CartVO">
+		INSERT into cart_r
+		VALUES (
+		5,
+		'img/socks.jpg',
+		'RandB Socks',
+		1,
+		5,
+		'free',
+		'29,000',
+		'socks'
+		)
+	</insert>
+	
+	
+	<delete id="deleteCart" parameterType="com.ftnirp.board.dto.CartVO">
+		DELETE cart_r
+		where cartNum = #{cartNum}
+	</delete>
+	
+
+	
+	
 	<select id="cartList" resultType="com.ftnirp.board.dto.CartVO">
-		select * from cart_r order by cartNum asc
+		 <![CDATA[
+	 	select rownum , a.*
+		from cart_r a order by rownum asc
+		]]>
 	</select>
-
-
-
-
-
-
-
 
 
 </mapper>

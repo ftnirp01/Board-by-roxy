@@ -48,6 +48,22 @@ outline-color: #333333;
 
 </style>		
 
+
+
+<script type="text/javascript">
+function formSubmit() {
+var conf = confirm('장바구니에 담으시겠습니까?');
+
+if (conf == true) {
+document.getElementById("form").submit();
+}else{
+	
+}
+
+	
+}
+
+</script>
 </head>
 <body data-spy="scroll" data-target="#navbar" class="static-layout" style="background-color:rgb(107, 103, 97);" >
 
@@ -92,10 +108,10 @@ outline-color: #333333;
 			
 			
 			<hr>
-			
+			<form id = "form" action = "jean" method="post" accept-charset="utf-8">
 			<a class="btn-outline-primary-shop btn-lg" style="width: 200px;" href="#">구매하기</a>
-			<a class="btn-outline-primary-shop btn-lg"  style="width: 200px;"  href="#">장바구니</a>
-			
+			<a class="btn-outline-primary-shop btn-lg"  style="width: 200px;"  href="javascript:formSubmit()" onclick="formSubmit(); return false;">장바구니</a>
+			</form>
 			<hr>
 			
 		</div>

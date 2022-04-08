@@ -11,8 +11,8 @@
 <title>F.com</title>
 <script type="text/javascript">
 function formSubmit() {
+	
 var conf = confirm('정말로 삭제하시겠습니까?');
-
 if (conf == true) {
 document.getElementById("form").submit();
 }else{

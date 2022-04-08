@@ -39,6 +39,31 @@
 
 
 <title>F.com</title>
+
+<script type="text/javascript">
+
+function deleteCart() {
+	
+	
+	var conf = confirm('삭제하시겠습니까?');
+	
+	if (conf==true) {
+		document.getElementById("form").submit();
+	}else{
+	}
+}
+
+function delete_btn(){
+	alert('hi');
+	const cartNum = $(this).data("cartNum");
+	$(".delete_cartNum").val(cartNum);
+	$(".cart_delete_form").submit();
+}
+
+
+</script>
+
+
 </head>
 <body data-spy="scroll" data-target="#navbar-nav-header" class="static-layout">
 	<div class="boxed-page">
@@ -163,7 +188,8 @@ String[] obDPrice = new String[]{"free"};
 							<hr>
 							 -->
 							 <hr>
-							<c:forEach items="${cart}" var = "cart">
+						
+							<c:forEach items="${cart}" var = "cart" varStatus="status">
 							<div style="text-align: center;">
 								<table>
 								 <colgroup>
@@ -178,28 +204,32 @@ String[] obDPrice = new String[]{"free"};
 		                                </colgroup>	
 								    	<thead>
 		                                    <tr>
-		                                        <th scope="col"><div class="tb-center">${cart.cartNum}</div></th>
+		                                        <th scope="col"><div class="tb-center">${status.count}</div></th>
 		                                        <th scope="col"><div class="tb-center"><img src="${cart.cartPic }" style="width: 100px; height: 80px;"></div></th>
 		                                        <th scope="col"><div class="tb-center"><a href = "${cart.href }">${cart.cartName }</a></div></th>
-		                                        <th scope="col"><div class="tb-center">${cart.cartQun }</div></th>
-		                                        <th scope="col"><div class="tb-center">${cart.point }</div></th>
+		                                        <th scope="col"><div class="tb-center">${cart.cartQun }개</div></th>
+		                                        <th scope="col"><div class="tb-center">${cart.point }pt</div></th>
 		                                        <th scope="col"><div class="tb-center">${cart.cartPrice }</div></th>
 		                                        <th scope="col"><div class="tb-center">${cart.delPrice }</div></th>
-		                                        <th scope="col"><div class="tb-center"><a href = "#" onclick="return confirm('삭제하시겠습니까?')">cancel</a></div></th>
+		                                        <th scope="col"><div class="tb-center"><a href = "javascript:deleteCart()" data-cartNum = "${cart.cartNum }" onclick="deleteCart(); return false;">cancel</a></div></th>
 		                                    </tr>
 		                               	</thead>
 									</table>
-									
 									<hr>
-									    
 								</div>
 								</c:forEach>
+							<form action = "/deleteCart" method="post" class = "cart_delete_form">
+							
+							<input type = "hidden" name = "cartNum" class = "delete_cartNum">
+							
+							</form>
+								
                         
                         <div style="text-align: center;">
-                            <a href="javascript:alert('주문이 가능한 금액이 아닙니다.고객센터에 문의 바랍니다.')" class="btn btn-outline-primary btn-lg">주문하기</a>
+                            <a href="javascript:alert('준비중입니다.')" class="btn btn-outline-primary btn-lg">주문하기</a>
                             <a href="shop" class="btn btn-outline-primary btn-lg">계속 쇼핑하기</a>
-                            <a href="javascript:basket_clear();" class="btn btn-outline-primary btn-lg">장바구니 비우기</a>
-                            <a href="javascript:basket_estimate()" class="btn btn-outline-primary btn-lg">견적서 출력</a>
+                            <a href="javascript:alert('준비중입니다.')" class="btn btn-outline-primary btn-lg">장바구니 비우기</a>
+                            <a href="javascript:alert('준비중입니다.')" class="btn btn-outline-primary btn-lg">견적서 출력</a>
                         </div>
 		<hr>
 <!-- 내용물 끝 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
@@ -219,7 +249,7 @@ String[] obDPrice = new String[]{"free"};
             <div class="row">
                 <!-- FeedBack Form Holder -->
                 <div class="col-md-8 offset-md-2 contact-form-holder mt-4" data-aos="fade-up">
-                    <form method="post" name="contact-us" action="">
+                    <form method="post" name="contact-us" action="#">
                         <div class="row">
                             <div class="col-md-12 form-group">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Name">

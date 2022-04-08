@@ -30,6 +30,16 @@ public interface BoardDAO {
 	
 	int pantsCart(CartVO cartVO); //pants 장바구니에 추가
 	
+	int pants2Cart(CartVO cartVO); //pants2 장바구니에 추가
+
+	int beltCart(CartVO cartVO); //belt 장바구니에 추가
+	
+	int jeanCart(CartVO cartVO); //jean 장바구니에 추가
+	
+	int socksCart(CartVO cartVO); //socks 장바구니에 추가
+	
+	void deleteCart(int cartNum); //장바구니 삭제
+	
 	List<CartVO> cartList(); //장바구니 조회
 	
 }

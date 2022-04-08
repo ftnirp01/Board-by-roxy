@@ -109,9 +109,6 @@ document.getElementById("form").submit();
 			
 			<form id = "form" action = "pants" method="post" accept-charset="utf-8">
 			
-			<%
-		
-			%>
 			
 			<a class="btn-outline-primary-shop btn-lg" style="width: 200px;" href="#">구매하기</a>
 			<a class="btn-outline-primary-shop btn-lg"  style="width: 200px;"  href="javascript:formSubmit()" onclick="formSubmit(); return false;">장바구니</a>
