@@ -1,3 +1,5 @@
+<%@page import="java.awt.Frame"%>
+<%@page import="com.ftnirp.board.dto.BoardVO"%>
 <%@page import="com.ftnirp.board.dto.CartVO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.ftnirp.board.dto.MemberVO"%>
@@ -53,12 +55,16 @@ function deleteCart() {
 	}
 }
 
-function delete_btn(){
-	alert('hi');
-	const cartNum = $(this).data("cartNum");
-	$(".delete_cartNum").val(cartNum);
-	$(".cart_delete_form").submit();
+
+function delCheck(){
+	var url= "/board/delCheck";    //팝업창에 출력될 페이지 URL
+	var winWidth = 700;
+    var winHeight = 600;
+    var popupOption= "width="+winWidth+", height="+winHeight;    //팝업창 옵션(optoin)
+    var myWindow = window.open(url,"TestName",popupOption);
+    myWindow.document.write("<h1>"+myWindow.name+"</h1>");
 }
+
 
 
 </script>
@@ -153,7 +159,7 @@ String[] obDPrice = new String[]{"free"};
                         <div style="text-align: center;">
                             <table summary="번호, 사진, 제품명, 수량, 적립, 가격, 배송비, 취소">
                                 <colgroup>
-                                      <col width="180" />
+                                    <col width="180" />
                                     <col width="200" />
                                     <col width="300" />
                                     <col width="150" />
@@ -187,9 +193,9 @@ String[] obDPrice = new String[]{"free"};
 						
 							<hr>
 							 -->
-							 <hr>
-						
+							<hr>
 							<c:forEach items="${cart}" var = "cart" varStatus="status">
+							<form id = "form" action = "deleteCart?cartNum=${cart.cartNum }" method="post" >
 							<div style="text-align: center;">
 								<table>
 								 <colgroup>
@@ -217,19 +223,13 @@ String[] obDPrice = new String[]{"free"};
 									</table>
 									<hr>
 								</div>
-								</c:forEach>
-							<form action = "/deleteCart" method="post" class = "cart_delete_form">
-							
-							<input type = "hidden" name = "cartNum" class = "delete_cartNum">
-							
 							</form>
-								
-                        
+						</c:forEach>
                         <div style="text-align: center;">
                             <a href="javascript:alert('준비중입니다.')" class="btn btn-outline-primary btn-lg">주문하기</a>
                             <a href="shop" class="btn btn-outline-primary btn-lg">계속 쇼핑하기</a>
                             <a href="javascript:alert('준비중입니다.')" class="btn btn-outline-primary btn-lg">장바구니 비우기</a>
-                            <a href="javascript:alert('준비중입니다.')" class="btn btn-outline-primary btn-lg">견적서 출력</a>
+                            <a href="javascript:delCheck()" onclick="delCheck(); return false();"  class="btn btn-outline-primary btn-lg">견적서 출력</a>
                         </div>
 		<hr>
 <!-- 내용물 끝 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->

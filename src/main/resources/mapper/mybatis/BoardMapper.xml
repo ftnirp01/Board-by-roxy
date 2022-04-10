@@ -161,8 +161,12 @@
 	<select id="cartList" resultType="com.ftnirp.board.dto.CartVO">
 		 <![CDATA[
 	 	select rownum , a.*
-		from cart_r a order by rownum asc
+		from cart_r a order by rownum desc
 		]]>
+	</select>
+	
+	<select id="cartOne" resultType="com.ftnirp.board.dto.CartVO">
+		select * from cart_r
 	</select>
 
 

@@ -58,7 +58,6 @@ public class BoardController {
 		
 		
 		model.addAttribute("cart" , boardService.cartList());
-		
 		return "board/cart";
 	}
 	
@@ -251,6 +250,13 @@ public class BoardController {
 		System.out.println("userId(삭제) = " + userId);
 		boardService.deleteBoard(userId);
 		return "redirect:/list";
+	}
+	
+	@RequestMapping("/board/delCheck")
+	public String popUp (Model model) {
+		
+		model.addAttribute("cart",boardService.cartList());
+		return "board/delCheck";
 	}
 	
 	

@@ -42,4 +42,6 @@ public interface BoardDAO {
 	
 	List<CartVO> cartList(); //장바구니 조회
 	
+	CartVO cartOne();
+	
 }

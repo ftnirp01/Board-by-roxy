@@ -78,5 +78,9 @@ public class BoardService {
 		return mapper.cartList();
 	}
 	
+	public CartVO cartOne() {
+		return mapper.cartOne();
+	}
+	
 	
 }
