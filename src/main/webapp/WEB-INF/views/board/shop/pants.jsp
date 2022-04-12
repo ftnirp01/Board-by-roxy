@@ -61,6 +61,19 @@ document.getElementById("form").submit();
 	
 }
 
+function formSubmit2() {
+	var conf2 = confirm('주문하시겠습니까?');
+	
+	if (conf2 == true) {
+	alert('장바구니에 추가되었습니다.');
+	document.getElementById("form").submit();
+	}else{
+		
+	}
+
+		
+	}
+
 </script>
 </head>
 <body data-spy="scroll" data-target="#navbar" class="static-layout" style="background-color:rgb(107, 103, 97);" >
@@ -110,7 +123,7 @@ document.getElementById("form").submit();
 			<form id = "form" action = "pants" method="post" accept-charset="utf-8">
 			
 			
-			<a class="btn-outline-primary-shop btn-lg" style="width: 200px;" href="#">구매하기</a>
+			<a class="btn-outline-primary-shop btn-lg" style="width: 200px;" href="javascript:formSubmit2()">구매하기</a>
 			<a class="btn-outline-primary-shop btn-lg"  style="width: 200px;"  href="javascript:formSubmit()" onclick="formSubmit(); return false;">장바구니</a>
 			
 			</form>

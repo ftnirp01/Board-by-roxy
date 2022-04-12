@@ -19,7 +19,7 @@ public class BoardController {
 	BoardService boardService;
 	
 	@RequestMapping("/list")
-	public String showList(Model model , Criteria cri 
+	public String showList(Model model , Criteria cri
 							,@RequestParam(value = "pageNum" , required = false)String pageNum
 							,@RequestParam(value = "cntPerPage" , required = false)String cntPerPage) {
 
@@ -254,10 +254,23 @@ public class BoardController {
 	
 	@RequestMapping("/board/delCheck")
 	public String popUp (Model model) {
-		
 		model.addAttribute("cart",boardService.cartList());
 		return "board/delCheck";
 	}
 	
+	@RequestMapping("/nftCheck1")
+	public String nftCheck1() {
+		return "board/nftCheck1";
+	}
+	
+	@RequestMapping("/nftCheck2")
+	public String nftCheck2() {
+		return "board/nftCheck2";
+	}
+	
+	@RequestMapping("/nftCheck3")
+	public String nftCheck3() {
+		return "board/nftCheck3";
+	}
 	
 }

@@ -69,14 +69,10 @@
 <hr>
 <hr>
 
-<div>
-<p>합계금액 : </p>
+<div style="text-align: center;">
+<h3>이용해주셔서 감사합니다.</h3>
 </div>
 
-
-<div>
-<p>포인트적립 : </p>
-</div>
 
 
 </body>

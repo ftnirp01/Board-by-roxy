@@ -40,6 +40,43 @@
 
 
 <title>F.com</title>
+
+
+
+<script type="text/javascript">
+
+
+function nftSelect(){
+	var url= "nftCheck1";    //팝업창에 출력될 페이지 URL
+	var winWidth = 700;
+    var winHeight = 900;
+    var popupOption= "width="+winWidth+", height="+winHeight;    //팝업창 옵션(optoin)
+    var myWindow = window.open(url,"TestName",popupOption);
+}
+
+function nftSelect_2(){
+	var url= "nftCheck2";    //팝업창에 출력될 페이지 URL
+	var winWidth = 700;
+    var winHeight = 900;
+    var popupOption= "width="+winWidth+", height="+winHeight;    //팝업창 옵션(optoin)
+    var myWindow = window.open(url,"TestName",popupOption);
+}
+
+function nftSelect_3(){
+	var url= "nftCheck3";    //팝업창에 출력될 페이지 URL
+	var winWidth = 700;
+    var winHeight = 900;
+    var popupOption= "width="+winWidth+", height="+winHeight;    //팝업창 옵션(optoin)
+    var myWindow = window.open(url,"TestName",popupOption);
+}
+
+
+
+
+</script>
+
+
+
 </head>
 <body data-spy="scroll" data-target="#navbar" class="static-layout">
 
@@ -147,14 +184,14 @@
                         <div class="col-md-4 blog-item-wrapper" data-aos="fade-up">
                             <div class="blog-item">
                                 <div class="blog-img">
-                                    <a href="javascript:alert('준비중입니다.')"><img src="img/nft1.jpg" alt=""></a>
+                                    <a href="javascript:nftSelect()" onclick="nftSelect(); return false;"><img src="img/nft1.jpg" alt=""></a>
                                 </div>
                                 <div class="blog-text">
                                     <div class="blog-tag">
-                                        <a href="javascript:alert('준비중입니다.')"><h6><small>Space</small></h6></a>
+                                        <a href=""><h6><small>Space</small></h6></a>
                                     </div>
                                     <div class="blog-title">
-                                        <a href="javascript:alert('준비중입니다.')"><h4>공간의 미</h4></a>
+                                        <a href=""><h4>공간의 미</h4></a>
                                     </div>
                                     <div class="blog-meta">
                                         <p class="blog-date">2021/12/30</p>
@@ -181,7 +218,7 @@
                         <div class="col-md-4 blog-item-wrapper" data-aos="fade-up" data-aos-delay="200">
                             <div class="blog-item">
                                 <div class="blog-img">
-                                    <a href="javascript:alert('준비중입니다.')"><img src="img/nft2.jpg" alt=""></a>
+                                    <a href="javascript:nftSelect_2()"><img src="img/nft2.jpg" alt=""></a>
                                 </div>
                                 <div class="blog-text">
                                     <div class="blog-tag">
@@ -215,7 +252,7 @@
                         <div class="col-md-4 blog-item-wrapper" data-aos="fade-up" data-aos-delay="400">
                             <div class="blog-item">
                                 <div class="blog-img">
-                                    <a href="javascript:alert('준비중입니다.')"><img src="img/nft3.jpg" alt=""></a>
+                                    <a href="javascript:nftSelect_3()"><img src="img/nft3.jpg" alt=""></a>
                                 </div>
                                 <div class="blog-text">
                                     <div class="blog-tag">
